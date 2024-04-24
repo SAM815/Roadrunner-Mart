@@ -2,41 +2,65 @@ import { Avatar, Button, Dialog, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { deleteMyProfile, getMyPosts, logoutUser } from "../../Actions/User";
+import { useParams } from "react-router-dom";
+import {
+  followAndUnfollowUser,
+  getUserPosts,
+  getUserProfile,
+} from "../../Actions/User";
 import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
-import "./Account.css";
 
-const Account = () => {
+const UserProfile = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { user, loading: userLoading } = useSelector((state) => state.user);
-  const { loading, error, posts } = useSelector((state) => state.myPosts);
   const {
-    error: likeError,
+    user,
+    loading: userLoading,
+    error: userError,
+  } = useSelector((state) => state.userProfile);
+
+  const { user: me } = useSelector((state) => state.user);
+  const { loading, error, posts } = useSelector((state) => state.userPosts);
+  const {
+    error: followError,
     message,
-    loading: deleteLoading,
+    loading: followLoading,
   } = useSelector((state) => state.like);
 
+  const params = useParams();
   const [followersToggle, setFollowersToggle] = useState(false);
-
   const [followingToggle, setFollowingToggle] = useState(false);
-  const logoutHandler = () => {
-    dispatch(logoutUser());
-    alert.success("Logged out successfully");
-  };
+  const [following, setFollowing] = useState(false);
+  const [myProfile, setMyProfile] = useState(false);
 
-  const deleteProfileHandler = async () => {
-    await dispatch(deleteMyProfile());
-    dispatch(logoutUser());
+  const followHandler = async () => {
+    setFollowing(!following);
+    await dispatch(followAndUnfollowUser(user._id));
+    dispatch(getUserProfile(params.id));
   };
 
   useEffect(() => {
-    dispatch(getMyPosts());
-  }, [dispatch]);
+    dispatch(getUserPosts(params.id));
+    dispatch(getUserProfile(params.id));
+  }, [dispatch, params.id]);
+
+  useEffect(() => {
+    if (me._id === params.id) {
+      setMyProfile(true);
+    }
+    if (user) {
+      user.followers.forEach((item) => {
+        if (item._id === me._id) {
+          setFollowing(true);
+        } else {
+          setFollowing(false);
+        }
+      });
+    }
+  }, [user, me._id, params.id]);
 
   useEffect(() => {
     if (error) {
@@ -44,15 +68,20 @@ const Account = () => {
       dispatch({ type: "clearErrors" });
     }
 
-    if (likeError) {
-      alert.error(likeError);
+    if (followError) {
+      alert.error(followError);
+      dispatch({ type: "clearErrors" });
+    }
+
+    if (userError) {
+      alert.error(userError);
       dispatch({ type: "clearErrors" });
     }
     if (message) {
       alert.success(message);
       dispatch({ type: "clearMessage" });
     }
-  }, [alert, error, message, likeError, dispatch]);
+  }, [alert, error, message, followError, userError, dispatch]);
 
   return loading === true || userLoading === true ? (
     <Loader />
@@ -71,57 +100,53 @@ const Account = () => {
               ownerImage={post.owner.avatar.url}
               ownerName={post.owner.name}
               ownerId={post.owner._id}
-              isAccount={true}
-              isDelete={true}
             />
           ))
         ) : (
-          <Typography variant="h6">You have not made any post</Typography>
+          <Typography variant="h6">User has not made any post</Typography>
         )}
       </div>
       <div className="accountright">
-        <Avatar
-          src={user.avatar.url}
-          sx={{ height: "8vmax", width: "8vmax" }}
-        />
+        {user && (
+          <>
+            <Avatar
+              src={user.avatar.url}
+              sx={{ height: "8vmax", width: "8vmax" }}
+            />
 
-        <Typography variant="h5">{user.name}</Typography>
+            <Typography variant="h5">{user.name}</Typography>
 
-        <div>
-          <button onClick={() => setFollowersToggle(!followersToggle)}>
-            <Typography>Followers</Typography>
-          </button>
-          <Typography>{user.followers.length}</Typography>
-        </div>
+            <div>
+              <button onClick={() => setFollowersToggle(!followersToggle)}>
+                <Typography>Followers</Typography>
+              </button>
+              <Typography>{user.followers.length}</Typography>
+            </div>
 
-        <div>
-          <button onClick={() => setFollowingToggle(!followingToggle)}>
-            <Typography>Following</Typography>
-          </button>
-          <Typography>{user.following.length}</Typography>
-        </div>
+            <div>
+              <button onClick={() => setFollowingToggle(!followingToggle)}>
+                <Typography>Following</Typography>
+              </button>
+              <Typography>{user.following.length}</Typography>
+            </div>
 
-        <div>
-          <Typography>Posts</Typography>
-          <Typography>{user.posts.length}</Typography>
-        </div>
+            <div>
+              <Typography>Posts</Typography>
+              <Typography>{user.posts.length}</Typography>
+            </div>
 
-        <Button variant="contained" onClick={logoutHandler}>
-          Logout
-        </Button>
-
-        <Link to="/update/profile">Edit Profile</Link>
-        <Link to="/update/password">Change Password</Link>
-
-        <Button
-          variant="text"
-          style={{ color: "red", margin: "2vmax" }}
-          onClick={deleteProfileHandler}
-          disabled={deleteLoading}
-        >
-          Delete My Profile
-        </Button>
-
+            {myProfile ? null : (
+              <Button
+                variant="contained"
+                style={{ background: following ? "red" : "" }}
+                onClick={followHandler}
+                disabled={followLoading}
+              >
+                {following ? "Unfollow" : "Follow"}
+              </Button>
+            )}
+          </>
+        )}
         <Dialog
           open={followersToggle}
           onClose={() => setFollowersToggle(!followersToggle)}
@@ -174,4 +199,4 @@ const Account = () => {
   );
 };
 
-export default Account;
+export default UserProfile;

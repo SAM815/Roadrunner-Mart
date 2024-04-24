@@ -1,43 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./Header.css";
 import { Link } from "react-router-dom";
 import {
-    Home,
-    HomeOutlined,
-    Add,
-    AddOutlined,
-    Search,
-    SearchOutlined,
-    AccountCircle,
-    AccountCircleOutlined,
-    
+  Home,
+  HomeOutlined,
+  Add,
+  AddOutlined,
+  SearchOutlined,
+  Search,
+  AccountCircle,
+  AccountCircleOutlined,
 } from "@mui/icons-material";
-import "./Header.css";
-import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 
 const Header = () => {
+  const [tab, setTab] = useState(window.location.pathname);
+  return (
+    <div className="header">
+      <Link to="/" onClick={() => setTab("/")}>
+        {tab === "/" ? <Home style={{ color: "black" }} /> : <HomeOutlined />}
+      </Link>
 
-    const [tab, setTab] = useState(window.location.pathname);
+      <Link to="/newpost" onClick={() => setTab("/newpost")}>
+        {tab === "/newpost" ? (
+          <Add style={{ color: "black" }} />
+        ) : (
+          <AddOutlined />
+        )}
+      </Link>
 
-    return (
-       <div className="header">
-        <Link to="/" onClick = {()=> setTab("/")}>
-            {tab === "/" ? <Home style={{color: "black"}}/> : <HomeOutlined/>}
-        </Link>
-        <Link to="/newpost" onClick = {()=> setTab("/newpost")}>
-            {tab === "/newpost" ? <Add style={{color: "black"}}/> : <AddOutlined/>}
-        </Link>
-        <Link to="/search" onClick = {()=> setTab("/search")}>
-            {tab === "/search" ? <Search style={{color: "black"}}/> : <SearchOutlined/>}
-        </Link>
-        <Link to="/addbusiness" onClick = {()=> setTab("/addbusiness")}>
-            {tab === "/addbusiness" ? < AddBusinessIcon style={{color: "black"}}/> : <AddBusinessIcon/>}
-        </Link>
-        <Link to="/account" onClick = {()=> setTab("/account")}>
-            {tab === "/account" ? <AccountCircle style={{color: "black"}}/> : <AccountCircleOutlined/>}
-        </Link>
-        
-       </div>
-    )
-}
+      <Link to="/search" onClick={() => setTab("/search")}>
+        {tab === "/search" ? (
+          <Search style={{ color: "black" }} />
+        ) : (
+          <SearchOutlined />
+        )}
+      </Link>
 
-export default Header
+      <Link to="/account" onClick={() => setTab("/account")}>
+        {tab === "/account" ? (
+          <AccountCircle style={{ color: "black" }} />
+        ) : (
+          <AccountCircleOutlined />
+        )}
+      </Link>
+
+      
+    </div>
+  );
+};
+
+export default Header;
