@@ -5,10 +5,11 @@
     display: grid;
     grid-template-columns: 1fr 400px;
     height: 100vh;
+    
   }
   
   .homeleft {
-    background-image: linear-gradient(to right, #fff5bc, #cec1ff);
+    background-color: #862633;
   
     overflow-y: auto;
     display: flex;
@@ -21,14 +22,16 @@
     padding: 2vmax;
     box-sizing: border-box;
     overflow-y: auto;
+    background-color: #f3be55;
+    
   }
   
   .homeUser {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.507);
-    transition: all 0.5s;
+    color: black;
+    transition: all 0.5s; 
   }
   .homeUser > img {
     height: 3vmax;

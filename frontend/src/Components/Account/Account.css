@@ -7,7 +7,7 @@
   }
   
   .accountleft {
-    background-image: linear-gradient(to right, #fff5bc, #cec1ff);
+    background-color: #862633;
   
     display: flex;
     flex-direction: column;
@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #f3be55;
   }
   
   .accountright img:hover {
@@ -59,10 +60,11 @@
   
   .accountright > div > button:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
+    
   }
   .accountright > div > button {
     border: none;
-    background-color: white;
+    
     cursor: pointer;
     transition: all 0.5s;
     padding: 0.5vmax 1vmax;

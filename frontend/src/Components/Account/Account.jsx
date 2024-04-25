@@ -88,14 +88,14 @@ const Account = () => {
         <Typography variant="h5">{user.name}</Typography>
 
         <div>
-          <button onClick={() => setFollowersToggle(!followersToggle)}>
+          <button onClick={() => setFollowersToggle(!followersToggle)} style={{backgroundColor: "#f3be55"}}>
             <Typography>Followers</Typography>
           </button>
           <Typography>{user.followers.length}</Typography>
         </div>
 
         <div>
-          <button onClick={() => setFollowingToggle(!followingToggle)}>
+          <button onClick={() => setFollowingToggle(!followingToggle)} style={{backgroundColor: "#f3be55"}}>
             <Typography>Following</Typography>
           </button>
           <Typography>{user.following.length}</Typography>
@@ -125,9 +125,10 @@ const Account = () => {
         <Dialog
           open={followersToggle}
           onClose={() => setFollowersToggle(!followersToggle)}
+          
         >
-          <div className="DialogBox">
-            <Typography variant="h4">Followers</Typography>
+          <div className="DialogBox" >
+            <Typography variant="h4" >Followers</Typography>
 
             {user && user.followers.length > 0 ? (
               user.followers.map((follower) => (
@@ -149,6 +150,7 @@ const Account = () => {
         <Dialog
           open={followingToggle}
           onClose={() => setFollowingToggle(!followingToggle)}
+          
         >
           <div className="DialogBox">
             <Typography variant="h4">Following</Typography>

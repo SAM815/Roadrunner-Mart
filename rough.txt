@@ -1,0 +1,42 @@
+.header > a > svg {
+    font-size: 2vmax;
+    transition: all 0.5s;
+    color: #cb123d;
+    font-style: bold;
+  }
+
+  .header > a > svg:hover {
+    color: #F5C24A;
+    transform: scale(1.2);
+  }
+
+  .homeleft {
+    background-color: #862633;
+  
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vmax;
+    box-sizing: border-box;
+  }
+
+  .homeUser {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #F5C24A;
+    transition: all 0.5s;
+  }
+
+  F5C24A => header buttons/links
+
+  862633 => login
+
+  .homeright {
+    padding: 2vmax;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: #aeadad;
+    
+  }

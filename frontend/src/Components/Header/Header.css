@@ -3,6 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
+   background-color: black;
+
+;
   }
   
   .header > a {
@@ -13,11 +17,12 @@
   .header > a > svg {
     font-size: 2vmax;
     transition: all 0.5s;
-    color: rgba(0, 0, 0, 0.445);
+    color: #cb123d;
+    font-style: bold;
   }
   
   .header > a > svg:hover {
-    color: black;
+    color: #F5C24A;
     transform: scale(1.2);
   }
   

@@ -69,7 +69,9 @@ const Home = () => {
         ) : (
           <Typography variant="h6">No posts yet</Typography>
         )}
+        
       </div>
+      
       <div className="homeright">
         {users && users.length > 0 ? (
           users.map((user) => (
