@@ -16,11 +16,13 @@ import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Search from "./Components/Search/Search";
 import NotFound from "./Components/NotFound/NotFound";
+
 import axios from "axios";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
 
- 
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadUser());
@@ -38,6 +40,8 @@ function App() {
           path="/account"
           element={isAuthenticated ? <Account /> : <Login />}
         />
+
+
 
         <Route
           path="/register"
@@ -72,6 +76,13 @@ function App() {
           path="/user/:id"
           element={isAuthenticated ? <UserProfile /> : <Login />}
         />
+
+        <Route
+
+          path="/cart"
+          element={isAuthenticated ? <Cart /> : <Login />}
+        />
+
 
         <Route path="search" element={<Search />} />
 

@@ -25,6 +25,27 @@
     color: #F5C24A;
     transform: scale(1.2);
   }
+
+  .cartLink {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cartCount {
+    position: absolute;
+    top: -0.8vmax;
+    right: -0.6vmax;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.3vmax;
+    font-size: .7vmax;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   @media screen and (max-width: 600px) {
     .header > a {

@@ -8,6 +8,9 @@ import "./NewPost.css";
 const NewPost = () => {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");
+  const [description,setDescription] = useState("");
+  const [quantity,setQuantity] = useState();
+  const [price, setPrice] = useState();
 
   const { loading, error, message } = useSelector((state) => state.like);
   const dispatch = useDispatch();
@@ -28,7 +31,7 @@ const NewPost = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    await dispatch(createNewPost(caption, image));
+    await dispatch(createNewPost(caption, description,image, quantity, price));
     dispatch(loadUser());
   };
 
@@ -57,6 +60,26 @@ const NewPost = () => {
           value={caption}
           onChange={(e) => setCaption(e.target.value)}
         />
+        <input
+          type="text"
+          placeholder="Description..."
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Quantity of products"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+          
+        />
+        <input
+          type="number"
+          placeholder="Price per product"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        
         <Button disabled={loading} type="submit">
           Post
         </Button>

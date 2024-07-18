@@ -40,6 +40,7 @@ const UserProfile = () => {
     setFollowing(!following);
     await dispatch(followAndUnfollowUser(user._id));
     dispatch(getUserProfile(params.id));
+    
   };
 
   useEffect(() => {
@@ -100,6 +101,9 @@ const UserProfile = () => {
               ownerImage={post.owner.avatar.url}
               ownerName={post.owner.name}
               ownerId={post.owner._id}
+              description = {post.description}
+              quantity = {post.quantity}
+              price = {post.price}
             />
           ))
         ) : (

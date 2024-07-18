@@ -37,6 +37,8 @@ const UpdateProfile = () => {
     };
   };
 
+  
+
   const submitHandler = async (e) => {
     e.preventDefault();
     await dispatch(updateProfile(name, email, avatar));
@@ -93,7 +95,7 @@ const UpdateProfile = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-
+        
         <Button disabled={updateLoading} type="submit">
           Update
         </Button>

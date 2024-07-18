@@ -37,6 +37,14 @@
     outline: none;
     font: 100 1.2rem "Roboto", sans-serif;
   }
+  .newPostForm > input[type="number"] {
+    width: 100%;
+    padding: 1vmax;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font: 100 1.2rem "Roboto", sans-serif;
+  }
   
   .newPostForm > input[type="file"] {
     border-radius: 30px;

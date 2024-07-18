@@ -6,7 +6,7 @@ export const likePost = (id) => async (dispatch) => {
       type: "likeRequest",
     });
 
-    const { data } = await axios.get(`/api/v1/post/${id}`);
+    const { data } = await axios.get(`/api/v1/like/post/${id}`);
     dispatch({
       type: "likeSuccess",
       payload: data.message,
@@ -69,7 +69,7 @@ export const deleteCommentOnPost = (id, commentId) => async (dispatch) => {
   }
 };
 
-export const createNewPost = (caption, image) => async (dispatch) => {
+export const createNewPost = (caption, description, image, quantity, price) => async (dispatch) => {
   try {
     dispatch({
       type: "newPostRequest",
@@ -79,7 +79,10 @@ export const createNewPost = (caption, image) => async (dispatch) => {
       `/api/v1/post/upload`,
       {
         caption,
+        description,
         image,
+        quantity,
+        price
       },
       {
         headers: {
@@ -99,7 +102,7 @@ export const createNewPost = (caption, image) => async (dispatch) => {
   }
 };
 
-export const updatePost = (caption, id) => async (dispatch) => {
+export const updatePost = (caption, description, quantity, price, id) => async (dispatch) => {
   try {
     dispatch({
       type: "updateCaptionRequest",
@@ -109,6 +112,9 @@ export const updatePost = (caption, id) => async (dispatch) => {
       `/api/v1/post/${id}`,
       {
         caption,
+        description,
+        quantity,
+        price
       },
       {
         headers: {

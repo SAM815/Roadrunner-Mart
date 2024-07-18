@@ -194,7 +194,7 @@ exports.updateProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
 
-    const { name, email, avatar } = req.body;
+    const { name, email, avatar, seller } = req.body;
 
     if (name) {
       user.name = name;
@@ -202,6 +202,7 @@ exports.updateProfile = async (req, res) => {
     if (email) {
       user.email = email;
     }
+    
 
     if (avatar) {
       await cloudinary.v2.uploader.destroy(user.avatar.public_id);
@@ -467,7 +468,7 @@ exports.getMyPosts = async (req, res) => {
 
     for (let i = 0; i < user.posts.length; i++) {
       const post = await Post.findById(user.posts[i]).populate(
-        "likes comments.user owner"
+        " likes comments.user owner"
       );
       posts.push(post);
     }
@@ -493,7 +494,8 @@ exports.getUserPosts = async (req, res) => {
     for (let i = 0; i < user.posts.length; i++) {
       const post = await Post.findById(user.posts[i]).populate(
         "likes comments.user owner"
-      );
+      )
+      
       posts.push(post);
     }
 
@@ -508,3 +510,34 @@ exports.getUserPosts = async (req, res) => {
     });
   }
 };
+
+//Creating Seller account i.e. activating seller account
+
+exports.createSellerAccount = async(req,res) => {
+  
+  try {
+    const user = await User.findById(req.user._id);
+
+    if(!user) {
+      res.status(401).json({
+        success: false,
+        message: "User is not logged in or does not exist"
+      })
+    }
+
+   user.seller = !user.seller;
+   await user.save();
+
+   res.status(201).json ({
+    success: true,
+    message: `User seller status ${user.seller ? "enabled": "disabled"}` 
+   })
+
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+}

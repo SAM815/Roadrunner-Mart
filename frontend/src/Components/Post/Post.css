@@ -1,86 +1,148 @@
 /* //Post.css */
 .post {
-    width: 60%;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 0 1vmax 2vmax;
-    margin: 2vmax;
-  }
-  
-  .postHeader {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 1vmax;
-  }
-  .postHeader > button {
-    border-radius: 100%;
-    color: rgba(0, 0, 0, 0.582);
-  }
-  
-  .post > img {
+  width: 60%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 0 1vmax 2vmax;
+  margin: 2vmax;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1vmax;
+}
+
+.postHeader>button {
+  border-radius: 100%;
+  color: rgba(0, 0, 0, 0.582);
+}
+
+.productDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* Splits the div into three columns */
+  gap: 1rem;
+  /* Adds space between the columns */
+  margin-top: 1vmax;
+  /* Adds some space above this section */
+}
+
+.post>img {
+  width: 100%;
+}
+
+.productDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* Adjusts the number of columns if needed */
+  gap: 1rem;
+  /* Space between each item */
+  margin-top: 1rem;
+  /* Space below the caption */
+}
+
+.postDetails>a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  margin: 1vmax;
+}
+
+.postFooter>button {
+  color: rgba(0, 0, 0, 0.767);
+  margin: 0 1vmax;
+  border-radius: 100%;
+  transition: all 0.3s;
+}
+
+.postFooter>button:hover {
+  transform: translateY(-4px);
+}
+
+.postFooter>button>svg {
+  font-size: 1.7vmax;
+}
+
+.postFooterbutton {
+  border: none;
+  background-color: tomato;
+  padding: 0.5vmax;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s;
+}
+
+.postFooterinput {
+  border: none;
+  padding: 0.5vmax;
+  width: 2vmax;
+  text-align: center;
+  outline: none;
+  font: 400 0.8vmax "Roboto";
+  color: rgba(0, 0, 0, 0.74);
+}
+
+.DialogBox {
+  min-width: 500px;
+  height: 100vh;
+  padding: 2vmax;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  /* Add this line */
+  margin: 1vmax;
+  gap: 1vmax;
+  /* Adds space between each form element */
+}
+
+.commentForm>input,
+.commentForm>textarea,
+.commentForm>button {
+  width: 100%;
+  /* Ensure all elements take the full width */
+  padding: 1vmax;
+  margin-top: 1vmax;
+  /* Adds a top margin for spacing between elements */
+}
+
+.commentForm>input,
+.commentForm>textarea {
+  border-radius: 5px;
+  /* Rounded corners for input and textarea */
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+  font: 100 1vmax "Roboto", sans-serif;
+}
+
+.commentForm>button {
+  border-radius: 5px;
+  /* Consistent border radius for the button */
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .post {
     width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    padding: 0 0 4vw;
+    margin: 0;
   }
-  
-  .postDetails {
-    display: flex;
-    padding: 1vmax;
+
+  .postFooter>button>svg {
+    font-size: 8vw;
   }
-  
-  .postDetails > a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    margin: 1vmax;
+}
+
+@media screen and (max-width: 768px) {
+  .productDetails {
+    grid-template-columns: 1fr;
+    /* Stacks items vertically on smaller screens */
   }
-  
-  .postFooter > button {
-    color: rgba(0, 0, 0, 0.767);
-    margin: 0 1vmax;
-    border-radius: 100%;
-    transition: all 0.3s;
-  }
-  
-  .postFooter > button:hover {
-    transform: translateY(-4px);
-  }
-  
-  .postFooter > button > svg {
-    font-size: 1.7vmax;
-  }
-  
-  .DialogBox {
-    min-width: 500px;
-    height: 100vh;
-    padding: 2vmax;
-  }
-  .commentForm {
-    display: flex;
-    margin: 1vmax;
-  }
-  .commentForm > input {
-    width: 100%;
-    padding: 1vmax 2vmax;
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, 0.288);
-    border-radius: 30px 0 0 30px;
-    font: 100 1vmax "Roboto", sans-serif;
-  }
-  .commentForm > button {
-    border-radius: 0%;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .post {
-      width: 100%;
-      border-radius: 0;
-      box-shadow: none;
-      border: 1px solid rgba(0, 0, 0, 0.068);
-      padding: 0 0 4vw;
-      margin: 0;
-    }
-  
-    .postFooter > button > svg {
-      font-size: 8vw;
-    }
-  }
+}

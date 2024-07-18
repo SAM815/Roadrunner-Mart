@@ -1,4 +1,4 @@
-import { Avatar, Button, Typography, Dialog } from "@mui/material";
+import { Avatar, Button, Typography, Dialog  } from "@mui/material";
 import React, { useEffect } from "react";
 import {
   MoreVert,
@@ -18,18 +18,26 @@ import {
   updatePost,
 } from "../../Actions/Post";
 import { getFollowingPosts, getMyPosts, loadUser } from "../../Actions/User";
+
 import User from "../User/User";
 import CommentCard from "../CommentCard/CommentCard";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { addItemsToCart } from "../../Actions/Cart";
+import { useAlert } from "react-alert";
 
 const Post = ({
   postId,
   caption,
+  description,
+  quantity,
+  price,
   postImage,
   likes = [],
   comments = [],
   ownerImage,
   ownerName,
   ownerId,
+
   isDelete = false,
   isAccount = false,
 }) => {
@@ -39,9 +47,16 @@ const Post = ({
   const [commentToggle, setCommentToggle] = useState(false);
   const [captionValue, setCaptionValue] = useState(caption);
   const [captionToggle, setCaptionToggle] = useState(false);
+  const [descriptionValue, setDescriptionValue] = useState(description);
+  const [quantityValue, setQuantityValue] = useState(quantity);
+  const [priceValue, setPriceValue] = useState(price);
 
+  console.log(
+    description, quantity, price);
   const dispatch = useDispatch();
+  const alert = useAlert();
   const { user } = useSelector((state) => state.user);
+  
 
   const handleLike = async () => {
     setLiked(!liked);
@@ -68,7 +83,7 @@ const Post = ({
 
   const updateCaptionHandler = (e) => {
     e.preventDefault();
-    dispatch(updatePost(captionValue, postId));
+    dispatch(updatePost(captionValue, descriptionValue, quantityValue, priceValue, postId));
     dispatch(getMyPosts());
   };
 
@@ -77,6 +92,32 @@ const Post = ({
     dispatch(getMyPosts());
     dispatch(loadUser());
   };
+
+  const [amount, setAmount] = useState(1);
+
+  const increaseQuantity = () => {
+    console.log("increase wuantity"); 
+
+    if (amount >= quantity)
+      return
+    const qty = amount + 1;
+    setAmount(qty);
+
+  }
+
+  const decreaseQuantity = () => {
+
+    if (1>= amount)
+      return
+    const qty = amount-1;
+    setAmount(qty);
+  }
+
+  const addToCartHandler = () => {
+    dispatch(addItemsToCart(postId, amount));
+    alert.success("Items Added to cart");
+  }
+
 
   useEffect(() => {
     likes.forEach((item) => {
@@ -119,6 +160,34 @@ const Post = ({
         >
           {caption}
         </Typography>
+        {/* Displaying the description */}
+        <div className="productDetails">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+          >
+            Description: {description}
+          </Typography>
+
+          <Typography
+            variant="body2"
+            color="text.secondary"
+          >
+            Quantity: {quantity}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+          >
+            Price: {price}
+          </Typography>
+
+
+        </div>
+
+
+
+
       </div>
 
       <button
@@ -142,6 +211,16 @@ const Post = ({
         <Button onClick={() => setCommentToggle(!commentToggle)}>
           <ChatBubbleOutline />
         </Button>
+        <button className="postFooterbutton" onClick={decreaseQuantity}>-</button>
+        <input  readOnly className="postFooterinput" type="number" value={amount} />
+        <button className="postFooterbutton" onClick={increaseQuantity}>+</button>
+        {isAccount ? null : (
+          <Button onClick={addToCartHandler}>
+            <AddShoppingCartIcon />
+          </Button>
+        )}
+
+
 
         {isDelete ? (
           <Button onClick={deletePostHandler}>
@@ -220,9 +299,29 @@ const Post = ({
               placeholder="Caption Here..."
               required
             />
-
+            <textarea
+              type="text"
+              value={descriptionValue}
+              onChange={(e) => setDescriptionValue(e.target.value)}
+              placeholder="Update description..."
+              required
+            />
+            <input
+              type="number"
+              value={quantityValue}
+              onChange={(e) => setQuantityValue(Number(e.target.value))}
+              placeholder="Update quantity..."
+              required
+            />
+            <input
+              type="number"
+              value={priceValue}
+              onChange={(e) => setPriceValue(Number(e.target.value))}
+              placeholder="Update price..."
+              required
+            />
             <Button type="submit" variant="contained">
-              Update
+              Update Details
             </Button>
           </form>
         </div>

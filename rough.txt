@@ -1,42 +1,49 @@
-.header > a > svg {
-    font-size: 2vmax;
-    transition: all 0.5s;
-    color: #cb123d;
-    font-style: bold;
-  }
+ const [sellerToggle, setSellerToggle] = useState(false);
 
-  .header > a > svg:hover {
-    color: #F5C24A;
-    transform: scale(1.2);
-  }
+ initially seller toggle is false.  
 
-  .homeleft {
-    background-color: #862633;
-  
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2vmax;
-    box-sizing: border-box;
-  }
+ when this is clicked:
+  <div>
+          <Typography variant="subtitle1" >
+            Seller Account
+          </Typography>
+          <FormControlLabel
+            control={<Switch
+              // checked={user.seller}
+              // onChange={handleCheck}
+            />}
+            label={user.seller ? 'true' : 'false'}
+          />
+        </div>
 
-  .homeUser {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #F5C24A;
-    transition: all 0.5s;
-  }
+we want the seller toggle to not only become true and switch but also the seller in backend also becomes true i.e. backend ko seller true bhaera 
+this one also becomes true
 
-  F5C24A => header buttons/links
 
-  862633 => login
-
-  .homeright {
-    padding: 2vmax;
-    box-sizing: border-box;
-    overflow-y: auto;
-    background-color: #aeadad;
-    
-  }
+{
+    "itemsPrice": 200,
+        "taxPrice": 36,
+            "shippingPrice": 100,
+                "totalPrice": 336,
+                    "orderItems": [
+                        {
+                            "product": "",
+                            "name": "product1",
+                            "price": 1200,
+                            "image": "Sample Image",
+                            "quantity": 1
+                        },
+                    ],
+                        "shippingInfo": {
+        "address": "619 Los Angeles",
+            "city": "LA",
+                "state": "California",
+                    "country": "USA",
+                        "pinCode": 40001,
+                            "phoneNumber": 5512528788,
+        },
+    "paymentInfo": {
+        "id": "sample paymentInfo",
+            "status": "succeeded",
+        }
+}

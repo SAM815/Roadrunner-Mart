@@ -88,24 +88,24 @@ export const getMyPosts = () => async (dispatch) => {
 
 export const getAllUsers =
   (name = "") =>
-  async (dispatch) => {
-    try {
-      dispatch({
-        type: "allUsersRequest",
-      });
+    async (dispatch) => {
+      try {
+        dispatch({
+          type: "allUsersRequest",
+        });
 
-      const { data } = await axios.get(`/api/v1/users?name=${name}`);
-      dispatch({
-        type: "allUsersSuccess",
-        payload: data.users,
-      });
-    } catch (error) {
-      dispatch({
-        type: "allUsersFailure",
-        payload: error.response.data.message,
-      });
-    }
-  };
+        const { data } = await axios.get(`/api/v1/users?name=${name}`);
+        dispatch({
+          type: "allUsersSuccess",
+          payload: data.users,
+        });
+      } catch (error) {
+        dispatch({
+          type: "allUsersFailure",
+          payload: error.response.data.message,
+        });
+      }
+    };
 
 export const logoutUser = () => async (dispatch) => {
   try {
@@ -348,3 +348,22 @@ export const followAndUnfollowUser = (id) => async (dispatch) => {
     });
   }
 };
+
+export const userSellerAction = () => async (dispatch) => {
+  try {
+    dispatch({
+      type: "createSellerRequest",
+    });
+
+    const { data } = await axios.get("/api/v1/enableuser");
+    dispatch({
+      type: "createSellerSuccess",
+      payload: data.message,
+    })
+  } catch (error) {
+    dispatch({
+      type: "createSellerFailure",
+      payload: error.response.data.message
+    });
+  }
+}

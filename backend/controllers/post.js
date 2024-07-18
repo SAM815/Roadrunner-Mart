@@ -13,13 +13,29 @@ exports.createPost = async (req, res) => {
         url: myCloud.secure_url,
       },
       owner: req.user._id,
+      description: req.body.description,
+      quantity: req.body.quantity,
+      price: req.body.price,
     };
+
+    // const newPostData = {
+    //   caption:req.body.caption,
+    //   image: {
+    //     public_id:"req.body.public_id",
+    //     url:"req.body.url"
+    //   },
+    //   owner: req.user._id,
+    //   quantity: req.body.quantity,
+    //   price: req.body.price,
+    // }
 
     const post = await Post.create(newPostData);
 
     const user = await User.findById(req.user._id);
 
     user.posts.unshift(post._id);
+    console.log("Here");
+ 
 
     await user.save();
     res.status(201).json({
@@ -123,7 +139,7 @@ exports.getPostOfFollowing = async (req, res) => {
       owner: {
         $in: user.following,
       },
-    }).populate("owner likes comments.user");
+    }).populate("owner likes comments.user").select('+description +quantity');
 
     res.status(200).json({
       success: true,
@@ -156,6 +172,12 @@ exports.updateCaption = async (req, res) => {
     }
 
     post.caption = req.body.caption;
+    post.description = req.body.description;
+    post.quantity = req.body.quantity;
+    post.price = req.body.price;
+
+    
+
     await post.save();
     res.status(200).json({
       success: true,
@@ -273,3 +295,22 @@ exports.deleteComment = async (req, res) => {
     });
   }
 };
+
+
+//get product details
+exports.getProductDetails = async(req, res, next) => {
+ 
+  const post = await Post.findById(req.params.id);
+
+  if(!post){
+    return res.status(404).json({
+      success: false,
+      message: "Post not found",
+    });
+  }
+  
+  res.status(200).json({
+      success:true,
+      post
+  })
+}
