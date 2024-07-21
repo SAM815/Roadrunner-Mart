@@ -9,6 +9,11 @@ const { newOrder,
   updateOrder } = require("../controllers/order");
 const { isAuthenticated, authorizedRoles } = require("../middlewares/auth");
 
+router.route('/order/new').post((req, res, next) => {
+  console.log('Received request at /api/v1/order/new with body:', req.body);
+  next();
+}, isAuthenticated, newOrder);
+
 router.route("/orders/me")
   .get((req, res, next) => {
     console.log("Reached /orders/me route");

@@ -9,13 +9,16 @@ import {
 } from "./Reducers/User";
 import { likeReducer, myPostsReducer, userPostsReducer } from "./Reducers/Post";
 import { cartReducer } from "./Reducers/Cart";
+import { newOrderReducer } from "./Reducers/Order";
 
 let initialState = {
   cart:{
     cartItems: localStorage.getItem("cartItems")
     ? JSON.parse(localStorage.getItem("cartItems")):
     [],
-    
+    shippingInfo: localStorage.getItem("shippingInfo")
+    ? JSON.parse(localStorage.getItem("shippingInfo")):
+    {},
   }
 }
 
@@ -30,6 +33,7 @@ const store = configureStore({
     userPosts: userPostsReducer,
     userSellerReducer:userSellerReducer,
     cart: cartReducer,
+    newOrder:newOrderReducer,
     
 
    

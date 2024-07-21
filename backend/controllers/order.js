@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 exports.newOrder = async (req, res, next) => {
     try {
         const { shippingInfo, orderItems, paymentInfo, itemsPrice, taxPrice, shippingPrice, totalPrice } = req.body;
-        console.log(req.body);
+        console.log("Creating order with the data entered(controller: newOrder)",req.body);
         const order = await Order.create({
             shippingInfo,
             orderItems,
@@ -19,6 +19,8 @@ exports.newOrder = async (req, res, next) => {
             paidAt: Date.now(),
             user: req.user._id,
         })
+        console.log("The order is (controller(newOrder))")
+        console.log(order);
         console.log("order placed");
         res.status(201).json({
             success: true,

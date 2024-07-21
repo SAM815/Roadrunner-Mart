@@ -23,7 +23,7 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 const post = require("./routes/post");
 const user = require("./routes/user");
 const order = require("./routes/order");
-
+const payment = require("./routes/payment"); 
 
 
 
@@ -31,6 +31,7 @@ const order = require("./routes/order");
 app.use("/api/v1", post);
 app.use("/api/v1", user);
 app.use("/api/v1", order);
+app.use("/api/v1", payment);
 
 
 

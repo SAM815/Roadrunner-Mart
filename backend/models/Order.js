@@ -46,7 +46,7 @@ const orderSchema = new mongoose.Schema({
                 type: String,
                 required: true,
             },
-            product: {
+            post: {
                 type: mongoose.Schema.ObjectId,
                 ref: "Post",
                 required: true,
@@ -86,7 +86,7 @@ const orderSchema = new mongoose.Schema({
         default: 0,
         required: true,
     },
-    ShippingPrice: {
+    shippingPrice: {
         type: Number,
         default: 0,
         required: true,

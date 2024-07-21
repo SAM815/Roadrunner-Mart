@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Login from "./Components/Login/Login";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { loadUser } from "./Actions/User";
 import Home from "./Components/Home/Home";
 import Account from "./Components/Account/Account";
@@ -19,13 +19,27 @@ import NotFound from "./Components/NotFound/NotFound";
 
 import axios from "axios";
 import Cart from "./Components/Cart/Cart";
+import Shipping from "./Components/Cart/Shipping";
+import ConfirmOrder from "./Components/Cart/ConfirmOrder";
+import Payment from "./Components/Cart/Payment";
+import { Elements } from "@stripe/react-stripe-js"
+
+import { loadStripe } from '@stripe/stripe-js';
+import OrderSuccess from "./Components/Cart/Success";
+
 
 function App() {
+  const [stripeApiKey, setStripeApiKey] = useState("");
 
+  async function getStripeApiKey() {
+    const { data } = await axios.get("/api/v1/stripeapikey");
+    setStripeApiKey(data.stripeApiKey);
+  }
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadUser());
+    getStripeApiKey();
   }, [dispatch]);
 
   const { isAuthenticated } = useSelector((state) => state.user);
@@ -83,11 +97,42 @@ function App() {
           element={isAuthenticated ? <Cart /> : <Login />}
         />
 
+        <Route
+          path="/shipping"
+          element={isAuthenticated ? <Shipping /> : <Login />} />
+
+        <Route
+          path="/order/confirm"
+          element={isAuthenticated ? <ConfirmOrder /> : <Login />} />
+
+
+        
 
         <Route path="search" element={<Search />} />
 
-        <Route path="*" element={<NotFound />} />
+        <Route
+          path="/success"
+          element={isAuthenticated ? <OrderSuccess /> : <Login />} />
+
+
+
+        {window.location.pathname!=="/process/payment" &&
+        <Route exact path="*" element = {
+          <NotFound/>
+          }/>
+        
+        }
       </Routes>
+      {
+          
+          <Elements stripe = {loadStripe(stripeApiKey)}>
+            <Routes>
+              {<Route exact path = "/process/payment" element = {<Payment/>} />}
+  
+            </Routes>
+          </Elements>
+        }
+        
     </Router>
   );
 }
