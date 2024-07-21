@@ -9,7 +9,7 @@ import {
 } from "./Reducers/User";
 import { likeReducer, myPostsReducer, userPostsReducer } from "./Reducers/Post";
 import { cartReducer } from "./Reducers/Cart";
-import { newOrderReducer } from "./Reducers/Order";
+import { myOrdersReducer, newOrderReducer, orderDetailsReducer } from "./Reducers/Order";
 
 let initialState = {
   cart:{
@@ -34,6 +34,8 @@ const store = configureStore({
     userSellerReducer:userSellerReducer,
     cart: cartReducer,
     newOrder:newOrderReducer,
+    myOrders: myOrdersReducer,
+    orderDetails:orderDetailsReducer,
     
 
    

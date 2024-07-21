@@ -56,6 +56,7 @@ const Post = ({
   const dispatch = useDispatch();
   const alert = useAlert();
   const { user } = useSelector((state) => state.user);
+  const {post} = useSelector((state) => state.post)
   
 
   const handleLike = async () => {
@@ -215,7 +216,7 @@ const Post = ({
         <input  readOnly className="postFooterinput" type="number" value={amount} />
         <button className="postFooterbutton" onClick={increaseQuantity}>+</button>
         {isAccount ? null : (
-          <Button onClick={addToCartHandler}>
+          <Button onClick={addToCartHandler} disabled = {post.quantity < 1 ? true: false}>
             <AddShoppingCartIcon />
           </Button>
         )}

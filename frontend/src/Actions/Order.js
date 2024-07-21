@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const createOrder = (order) => async (dispatch, getState) => {
+export const createOrder = (order) => async (dispatch) => {
     try {
         console.log("The order is: ", order);
         console.log('Dispatching CREATE_ORDER_REQUEST');
@@ -60,7 +60,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
         dispatch({
             type:"ORDER_DETAIL_REQUEST",
         })
-        const {data} = await axios.get(`/api/v1/order/${id}`);
+        const {data} = await axios.get(`/api/v1/orders/${id}`);
         dispatch({
             type:"ORDER_DETAIL_SUCCESS", payload:data.order
         })

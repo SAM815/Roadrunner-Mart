@@ -26,6 +26,8 @@ import { Elements } from "@stripe/react-stripe-js"
 
 import { loadStripe } from '@stripe/stripe-js';
 import OrderSuccess from "./Components/Cart/Success";
+import MyOrders from "./Components/Order/MyOrder";
+import OrderDetails from "./Components/Order/OrderDetails";
 
 
 function App() {
@@ -101,12 +103,10 @@ function App() {
           path="/shipping"
           element={isAuthenticated ? <Shipping /> : <Login />} />
 
-        <Route
-          path="/order/confirm"
-          element={isAuthenticated ? <ConfirmOrder /> : <Login />} />
 
 
-        
+
+
 
         <Route path="search" element={<Search />} />
 
@@ -114,25 +114,45 @@ function App() {
           path="/success"
           element={isAuthenticated ? <OrderSuccess /> : <Login />} />
 
-
-
-        {window.location.pathname!=="/process/payment" &&
-        <Route exact path="*" element = {
-          <NotFound/>
-          }/>
         
+
+
+          <Route
+            path="/order/:id"
+            element={isAuthenticated ? <OrderDetails /> : <Login />} />
+
+          <Route
+            path="/order/confirm"
+            element={isAuthenticated ? <ConfirmOrder /> : <Login />} />
+       
+
+
+
+
+        {window.location.pathname !== "/process/payment" &&
+          <Route exact path="*" element={
+            <NotFound />
+          } />
+
         }
+
+        <Route
+          path="/orders"
+          element={isAuthenticated ? <MyOrders /> : <Login />} />
+
+
+
       </Routes>
       {
-          
-          <Elements stripe = {loadStripe(stripeApiKey)}>
-            <Routes>
-              {<Route exact path = "/process/payment" element = {<Payment/>} />}
-  
-            </Routes>
-          </Elements>
-        }
-        
+
+        <Elements stripe={loadStripe(stripeApiKey)}>
+          <Routes>
+            {<Route exact path="/process/payment" element={<Payment />} />}
+
+          </Routes>
+        </Elements>
+      }
+
     </Router>
   );
 }
