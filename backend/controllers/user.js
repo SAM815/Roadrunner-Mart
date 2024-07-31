@@ -3,6 +3,7 @@ const Post = require("../models/Post");
 const { sendEmail } = require("../middlewares/sendEmail");
 const crypto = require("crypto");
 const cloudinary = require("cloudinary");
+const Order = require("../models/Order");
 
 exports.register = async (req, res) => {
   try {
@@ -239,6 +240,11 @@ exports.deleteMyProfile = async (req, res) => {
     // Removing Avatar from cloudinary
     await cloudinary.v2.uploader.destroy(user.avatar.public_id);
 
+    const orders = await Order.find({ user: userId });
+    for (let i = 0; i < orders.length; i++) {
+      await orders[i].deleteOne();
+    }
+
     await user.deleteOne();
 
     // Logout user after deleting profile
@@ -460,6 +466,7 @@ exports.resetPassword = async (req, res) => {
   }
 };
 
+//get admin products/posts
 exports.getMyPosts = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);

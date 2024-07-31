@@ -44,7 +44,7 @@ const Register = () => {
     <div className="register">
       <form className="registerForm" onSubmit={submitHandler}>
         <Typography variant="h3" style={{ padding: "2vmax" }}>
-          RuadRunner-Mart
+          RoadRunner-Mart
         </Typography>
 
         <Avatar

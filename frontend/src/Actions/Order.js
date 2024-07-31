@@ -1,4 +1,4 @@
-import axios from "axios"
+ import axios from "axios"
 
 export const createOrder = (order) => async (dispatch) => {
     try {
@@ -118,6 +118,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
         };
 
         const {data} = await axios.put(`/api/v1/admin/order/${id}`, order, config);
+        
 
         dispatch({
             type:"UPDATE_ORDER_SUCCESS", payload:data.success

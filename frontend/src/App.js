@@ -28,6 +28,11 @@ import { loadStripe } from '@stripe/stripe-js';
 import OrderSuccess from "./Components/Cart/Success";
 import MyOrders from "./Components/Order/MyOrder";
 import OrderDetails from "./Components/Order/OrderDetails";
+import Dashboard from "./Components/Admin/Dashboard";
+import ProductList from "./Components/Admin/ProductList";
+import OrderList from "./Components/Admin/OrderList";
+import ProcessOrder from "./Components/Admin/ProcessOrder";
+
 
 
 function App() {
@@ -114,17 +119,17 @@ function App() {
           path="/success"
           element={isAuthenticated ? <OrderSuccess /> : <Login />} />
 
-        
 
 
-          <Route
-            path="/order/:id"
-            element={isAuthenticated ? <OrderDetails /> : <Login />} />
 
-          <Route
-            path="/order/confirm"
-            element={isAuthenticated ? <ConfirmOrder /> : <Login />} />
-       
+        <Route
+          path="/order/:id"
+          element={isAuthenticated ? <OrderDetails /> : <Login />} />
+
+        <Route
+          path="/order/confirm"
+          element={isAuthenticated ? <ConfirmOrder /> : <Login />} />
+
 
 
 
@@ -140,17 +145,33 @@ function App() {
           path="/orders"
           element={isAuthenticated ? <MyOrders /> : <Login />} />
 
+        <Route
+          path="/admin/dashboard"
+          element={isAuthenticated ? <Dashboard /> : <Login />} />
+
+        <Route
+          path="/admin/products"
+          element={isAuthenticated ? <ProductList /> : <Login />} />
+
+        <Route
+          path="/admin/orders"
+          element={isAuthenticated ? <OrderList /> : <Login />} />
+        <Route
+          path="/admin/order/:id"
+          element={isAuthenticated ? <ProcessOrder /> : <Login />} />
+
+       
 
 
       </Routes>
       {
-
-        <Elements stripe={loadStripe(stripeApiKey)}>
-          <Routes>
-            {<Route exact path="/process/payment" element={<Payment />} />}
-
-          </Routes>
-        </Elements>
+        stripeApiKey && (
+          <Elements stripe={loadStripe(stripeApiKey)}>
+            <Routes>
+              <Route exact path="/process/payment" element={<Payment />} />
+            </Routes>
+          </Elements>
+        )
       }
 
     </Router>

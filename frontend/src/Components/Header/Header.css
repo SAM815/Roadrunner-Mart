@@ -1,59 +1,79 @@
 /* Header.css */
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-   background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
 
-;
-  }
-  
+.header > a {
+  width: 2vmax;
+  height: 2vmax;
+  margin: 1vmax 4vmax;
+}
+
+.header > a > svg {
+  font-size: 2vmax;
+  transition: all 0.5s;
+  color: #cb123d;
+  font-style: bold;
+}
+
+.header > a > svg:hover {
+  color: #F5C24A;
+  transform: scale(1.2);
+}
+
+.cartLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cartCount {
+  position: absolute;
+  top: -0.8vmax;
+  right: -0.6vmax;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.3vmax;
+  font-size: 0.7vmax;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
   .header > a {
-    width: 2vmax;
-    height: 2vmax;
-    margin: 1vmax 4vmax;
-  }
-  .header > a > svg {
-    font-size: 2vmax;
-    transition: all 0.5s;
-    color: #cb123d;
-    font-style: bold;
-  }
-  
-  .header > a > svg:hover {
-    color: #F5C24A;
-    transform: scale(1.2);
+    width: 8vw;
+    height: 8vw;
+    margin: 2vw 8vw;
   }
 
-  .cartLink {
-    position: relative;
-    display: flex;
-    align-items: center;
+  .header > a > svg {
+    font-size: 8vw;
   }
-  
-  .cartCount {
-    position: absolute;
-    top: -0.8vmax;
-    right: -0.6vmax;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    padding: 0.3vmax;
-    font-size: .7vmax;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  .logo {
+    width: 50px;
   }
-  
-  @media screen and (max-width: 600px) {
-    .header > a {
-      width: 8vw;
-      height: 8vw;
-      margin: 2vw 8vw;
-    }
-    .header > a > svg {
-      font-size: 8vw;
-    }
-  }
+}

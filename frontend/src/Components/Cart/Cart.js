@@ -69,7 +69,7 @@ const Cart = () => {
                     <CartItemCard  item = {item} deleteCartItem = {deleteCartItem} />
                     <div className="cartInput">
                         <button onClick={()=>decreaseQuantity(item.post, item.amount)}>-</button>
-                        <input type="number" readOnly value = {item.amount} />
+                        <input type="number" readOnly />{item.amount}
                         <button onClick={()=>increaseQuantity(item.post, item.amount, item.quantity)}>+</button>
                     </div>
                     <p className="cartSubTotal">{`$${

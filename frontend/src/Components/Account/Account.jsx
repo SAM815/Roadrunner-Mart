@@ -3,14 +3,16 @@ import React, { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteMyProfile, getMyPosts, logoutUser, userSellerAction } from "../../Actions/User";
+import { deleteMyProfile, getMyPosts, logoutUser,  } from "../../Actions/User";
 import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
 import "./Account.css";
 
 
+
 const Account = () => {
+
   const dispatch = useDispatch();
   const alert = useAlert();
 
@@ -26,7 +28,7 @@ const Account = () => {
 
   const [followingToggle, setFollowingToggle] = useState(false);
 
-  const [isSeller, setIsSeller] = useState(user?.seller);
+ 
 
 
   const logoutHandler = () => {
@@ -37,13 +39,7 @@ const Account = () => {
 
 
 
-  const handleCheck = async () => {
-    setIsSeller((prev) => !prev); // Toggle local state immediately
-    await dispatch(userSellerAction()); // Ensure the action is awaited
-    
-    alert.success("Seller status updated");
-    window.location.reload();
-  };
+  
 
   const deleteProfileHandler = async () => {
     await dispatch(deleteMyProfile());
@@ -70,9 +66,7 @@ const Account = () => {
     }
   }, [alert, error, message, likeError, dispatch]);
 
-  useEffect(() => {
-    setIsSeller(user?.seller);
-  }, [user]);
+ 
 
   return loading === true || userLoading === true ? (
     <Loader />
@@ -129,23 +123,8 @@ const Account = () => {
           <Typography>{user.posts.length}</Typography>
         </div>
 
-        <div>
-          <Typography variant="subtitle1" >
-            Seller Account
-          </Typography>
-          <FormControlLabel
-            control={<Switch
-              checked={isSeller}
-            
-              onChange={handleCheck}
-
-            />}
-            
-            label={isSeller ? 'Active' : 'Inactive'}
-          />
-
-        </div>
-
+        
+        
 
 
 

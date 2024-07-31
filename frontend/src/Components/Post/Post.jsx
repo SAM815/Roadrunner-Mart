@@ -16,6 +16,7 @@ import {
   deletePost,
   likePost,
   updatePost,
+  
 } from "../../Actions/Post";
 import { getFollowingPosts, getMyPosts, loadUser } from "../../Actions/User";
 
@@ -56,7 +57,7 @@ const Post = ({
   const dispatch = useDispatch();
   const alert = useAlert();
   const { user } = useSelector((state) => state.user);
-  const {post} = useSelector((state) => state.post)
+  
   
 
   const handleLike = async () => {
@@ -212,15 +213,19 @@ const Post = ({
         <Button onClick={() => setCommentToggle(!commentToggle)}>
           <ChatBubbleOutline />
         </Button>
-        <button className="postFooterbutton" onClick={decreaseQuantity}>-</button>
-        <input  readOnly className="postFooterinput" type="number" value={amount} />
-        <button className="postFooterbutton" onClick={increaseQuantity}>+</button>
-        {isAccount ? null : (
-          <Button onClick={addToCartHandler} disabled = {post.quantity < 1 ? true: false}>
-            <AddShoppingCartIcon />
-          </Button>
-        )}
-
+        
+          <>
+            <button className="postFooterbutton" onClick={decreaseQuantity}>-</button>
+            <input readOnly className="postFooterinput" type="number" value={amount} />
+            <button className="postFooterbutton" onClick={increaseQuantity}>+</button>
+            {!isAccount && (
+              <Button onClick={addToCartHandler} disabled={quantity < 1}>
+                <AddShoppingCartIcon />
+              </Button>
+            )}
+          </>
+        
+{/* disabled = {post.quantity < 1 ? true: false} */}
 
 
         {isDelete ? (

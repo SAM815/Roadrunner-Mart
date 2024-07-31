@@ -20,6 +20,7 @@ import ShopOutlinedIcon from '@mui/icons-material/ShopOutlined';
 import { useDispatch, useSelector } from "react-redux";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import logo from "../../Images/RoadrunnerMart.png";
 
 
 const Header = () => {
@@ -33,11 +34,9 @@ const Header = () => {
   return (
     <div className="header">
 
-      <Typography style={{ color: "#F5C24A", fontWeight: "bold", fontSize: "1.8rem" }}>
-        RAMAPO MARKET PLACE
-      </Typography>
-
-
+      <Link to="/" className="logo-container">
+        <img src={logo} alt="RamapoMarketplace" className="logo" />
+      </Link>
 
 
       <Tooltip title="Home">
@@ -80,15 +79,15 @@ const Header = () => {
       <Tooltip title="Seller Dashboard if enabled seller account">
 
         {user.seller ?
-          <Link to="/shop" onClick={() => setTab("/shop")}>
-            {tab === "/shop" ? (
+          <Link to="/admin/dashboard" onClick={() => setTab("/admin/dashboard")}>
+            {tab === "/admin/dashboard" ? (
               <ShopIcon style={{ color: "F5C24A" }} />
             ) : (
               <ShopOutlinedIcon />
             )}
           </Link> :
-          <Link to="/shop" onClick={() => setTab("/shop")} style={{ pointerEvents: "none", cursor: "default" }}>
-            {tab === "/shop" ? (
+          <Link to="/admin/dashboard" onClick={() => setTab("/admin/dashboard")} style={{ pointerEvents: "none", cursor: "default" }}>
+            {tab === "/admin/dashboard" ? (
               <ShopIcon style={{ color: "F5C24A" }} />
             ) : (
               <ShopOutlinedIcon />
@@ -106,7 +105,7 @@ const Header = () => {
           )}
           {cartItems.length > 0 && (
             <span className="cartCount">{cartItems.length}</span>
-          )}  
+          )}
 
         </Link>
 

@@ -114,107 +114,57 @@ exports.getAllOrders = async (req, res) => {
 //==========================
 
 //finale updateStock
-// const updateStock = async (id, quantity) => {
+const updateStock = async (id, amount) => {
 
-//     const product = await Post.findById(id);
+    const product = await Post.findById(id);
 
-//     product.Stock -= quantity;
-
-//     await product.save();
-
-// }
-//---------------------------
-
-async function updateStock (id, amount) {
-    const product = await Post.findById(id)
-   
-
-    product.quantity -= amount
+    product.quantity -= amount;
 
     await product.save();
+
 }
+// //---------------------------
 
-//current update status --admin
 
-exports.updateOrder = async (req, res, next) => {
-    try {
-      const order = await Order.findById(req.params.id);
-  
-      if (!order) {
+
+//Final update order status - admin
+
+exports.updateOrder = async (req, res) => {
+    const order = await Order.findById(req.params.id);
+
+    if (!order) {
         return res.status(404).json({
-          success: false,
-          message: "Order not found",
-        });
-      }
-  
-      if (order.orderStatus === "Delivered") {
-        return res.status(400).json({
-          success: false,
-          message: "You have already delivered this order",
-        });
-      }
-  
-      // Use Promise.all to ensure all updateStock operations complete before continuing
-      await Promise.all(
-        order.orderItems.map(async (o) => {
-          await updateStock(o.product, o.amount);
+            success: false,
+            message: "Order not found with this ID"
         })
-      );
-  
-      order.orderStatus = req.body.status;
-  
-      if (req.body.status === "Delivered") {
-        order.deliveredAt = Date.now();
-      }
-  
-      await order.save();
-  
-      res.status(200).json({
-        success: true,
-      });
-    } catch (error) {
-      next(error);
     }
-  };
 
-// //Final update order status - admin
+    if (order.orderStatus === "Delivered") {
+        return res.status(404).json({
+            success: false,
+            message: "You have delivered this order"
+        })
+    }
 
-// exports.updateOrderStatus = async (req, res) => {
-//     const order = await Order.findById(req.params.id);
+    if (req.body.status === "Shipped") {
+        order.orderItems.forEach(async o => {
+            await updateStock(o.product, o.amount);
+        })
+    }
 
-//     if (!order) {
-//         return res.status(404).json({
-//             success: false,
-//             message: "Order not found with this ID"
-//         })
-//     }
+    order.orderStatus = req.body.status;
 
-//     if (order.orderStatus === "Delivered") {
-//         return res.status(404).json({
-//             success: false,
-//             message: "You have delivered this order"
-//         })
-//     }
+    if (req.body.status === "Delivered") {
+        order.deliveredAt = Date.now();
+    }
 
-//     if (req.body.status === "Shipped") {
-//         order.orderItems.forEach(async o => {
-//             await updateStock(o.product, o.quantity);
-//         })
-//     }
+    await order.save();
 
-//     order.orderStatus = req.body.status;
-
-//     if (req.body.status === "Delivered") {
-//         order.deliveredAt = Date.now();
-//     }
-
-//     await order.save();
-
-//     res.status(200).json({
-//         success: true,
-//         message: "Order Status Updated"
-//     })
-// }
+    res.status(200).json({
+        success: true,
+        message: "Order Status Updated"
+    })
+}
 
 // delete order status --admin
 
