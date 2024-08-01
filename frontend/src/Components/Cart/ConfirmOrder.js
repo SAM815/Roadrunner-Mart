@@ -7,6 +7,23 @@ import { Link } from 'react-router-dom'
 import { Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
+/*
+ConfirmOrder()
+NAME
+    ConfirmOrder
+SYNOPSIS
+    ConfirmOrder()
+DESCRIPTION
+    This React component is used to display the confirmation of an order before proceeding to payment. It shows shipping information, cart items, and an order summary including subtotal, shipping charges, tax, and total price. The user can review their order details and proceed to payment.
+
+    The component calculates the subtotal, shipping charges, tax, and total price based on the cart items and shipping information. It uses the `CheckoutSteps` component to show the current step in the checkout process.
+
+    The `proceedToPayment` function stores the order information in `sessionStorage` and navigates the user to the payment page.
+
+RETURNS
+    Returns a React component that displays shipping information, cart items, and order summary with a button to proceed to payment.
+*/
+
 const ConfirmOrder = () => {
 
     const {shippingInfo, cartItems} = useSelector((state)=>state.cart);

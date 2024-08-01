@@ -1,3 +1,16 @@
+/*
+Loader.css
+NAME
+    Loader.css
+SYNOPSIS
+    Styles for the loading page.
+DESCRIPTION
+    Configures the layout and animation for a loading page. Includes a centered spinner animation to indicate loading status. The spinner has a specific color scheme and rotation effect to create a visual loading indicator.
+RETURNS
+    CSS styles for a centered loading spinner with rotation animation, designed to occupy the full height of the viewport and provide a visual cue for loading processes.
+*/
+
+
 .loadingPage {
     height: 90vh;
     width: 100%;

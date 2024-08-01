@@ -1,3 +1,15 @@
+/*
+NotFound.css
+NAME
+    NotFound.css
+SYNOPSIS
+    Styles for the 404 Not Found page.
+DESCRIPTION
+    Configures the layout and appearance of the 404 Not Found page. The page is centered with a white container displaying a prominent error icon. The container is styled with rounded corners and padding for a clean look. Includes responsive design adjustments for smaller screens to ensure proper display on mobile devices.
+RETURNS
+    CSS styles for a clear and user-friendly 404 error page, with responsive design considerations for mobile devices.
+*/
+
 .notFound {
     height: 100vh;
     background-color: #862633;

@@ -6,6 +6,22 @@ import { loadUser, updateProfile } from "../../Actions/User";
 import { useAlert } from "react-alert";
 import Loader from "../Loader/Loader";
 
+/*
+UpdateProfile()
+NAME
+    UpdateProfile
+SYNOPSIS
+    UpdateProfile()
+DESCRIPTION
+    A React component for updating the user's profile information, including name, email, and avatar. Provides a form for input and handles profile updates.
+
+    Uses local state to manage form inputs and Redux for state management and dispatching actions. Material-UI components are used for styling.
+
+RETURNS
+    A form with inputs for updating the user's profile information and a button to submit the changes. Displays a loader while processing.
+*/
+
+
 const UpdateProfile = () => {
   const { loading, error, user } = useSelector((state) => state.user);
   const {

@@ -20,6 +20,20 @@ import Sidebar from "./Sidebar";
 
 import "./ProcessOrder.css"
 
+/*
+ProcessOrder()
+NAME
+    ProcessOrder
+SYNOPSIS
+    ProcessOrder();
+DESCRIPTION
+    This React component handles the processing of orders.
+    It allows an admin to update the status of an order (e.g., Processing, Shipped, Delivered).
+    The component fetches order details and displays shipping info, payment status, order status, and cart items.
+RETURNS
+    Returns a React component that displays order details and a form to update order status.
+*/
+
 const ProcessOrder = () => {
 
 

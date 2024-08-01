@@ -1,6 +1,30 @@
 const Post = require("../models/Post");
 const User = require("../models/User");
 const cloudinary = require("cloudinary");
+
+/*
+createPost()
+
+NAME
+    createPost
+
+SYNOPSIS
+    createPost(req, res);
+
+DESCRIPTION
+    This function creates a new post with the provided data.
+    It uploads the image to Cloudinary and saves the post information in the database.
+    The post is associated with the user who created it.
+    If successful, it sends a JSON response indicating the post was created.
+    In case of an error, it sends a JSON response with the error message.
+
+PARAMETERS
+    req - The request object containing post data in the body.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response indicating the success or failure of the operation.
+*/
 exports.createPost = async (req, res) => {
   try {
     const myCloud = await cloudinary.v2.uploader.upload(req.body.image, {
@@ -18,16 +42,7 @@ exports.createPost = async (req, res) => {
       price: req.body.price,
     };
 
-    // const newPostData = {
-    //   caption:req.body.caption,
-    //   image: {
-    //     public_id:"req.body.public_id",
-    //     url:"req.body.url"
-    //   },
-    //   owner: req.user._id,
-    //   quantity: req.body.quantity,
-    //   price: req.body.price,
-    // }
+   
 
     const post = await Post.create(newPostData);
 
@@ -49,7 +64,29 @@ exports.createPost = async (req, res) => {
     });
   }
 };
+/*
+deletePost()
 
+NAME
+    deletePost
+
+SYNOPSIS
+    deletePost(req, res);
+
+DESCRIPTION
+    This function deletes a post by its ID.
+    It checks if the post exists and if the user is authorized to delete it.
+    It removes the image from Cloudinary and deletes the post from the database.
+    If successful, it sends a JSON response indicating the post was deleted.
+    In case of an error, it sends a JSON response with the error message.
+
+PARAMETERS
+    req - The request object containing the post ID in the params.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response indicating the success or failure of the operation.
+*/
 exports.deletePost = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -90,7 +127,30 @@ exports.deletePost = async (req, res) => {
     });
   }
 };
+/*
+likeAndUnlikePost()
 
+NAME
+    likeAndUnlikePost
+
+SYNOPSIS
+    likeAndUnlikePost(req, res);
+
+DESCRIPTION
+    This function toggles the like status of a post.
+    It checks if the post exists and if the user has already liked it.
+    If the user has liked the post, it removes the like.
+    If the user has not liked the post, it adds the like.
+    If successful, it sends a JSON response indicating the post was liked or unliked.
+    In case of an error, it sends a JSON response with the error message.
+
+PARAMETERS
+    req - The request object containing the post ID in the params.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response indicating the success or failure of the operation.
+*/
 exports.likeAndUnlikePost = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -130,7 +190,29 @@ exports.likeAndUnlikePost = async (req, res) => {
     });
   }
 };
+/*
+getPostOfFollowing()
 
+NAME
+    getPostOfFollowing
+
+SYNOPSIS
+    getPostOfFollowing(req, res);
+
+DESCRIPTION
+    This function retrieves posts from users that the current user is following.
+    It populates the owner, likes, and comments fields of the posts.
+    It reverses the order of the posts so the most recent posts appear first.
+    If successful, it sends a JSON response with the retrieved posts.
+    In case of an error, it sends a JSON response with the error message.
+
+PARAMETERS
+    req - The request object containing user information.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response containing the posts from the followed users.
+*/
 exports.getPostOfFollowing = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
@@ -152,7 +234,28 @@ exports.getPostOfFollowing = async (req, res) => {
     });
   }
 };
+/*
+updateCaption()
 
+NAME
+    updateCaption
+
+SYNOPSIS
+    updateCaption(req, res);
+
+DESCRIPTION
+    This function updates the caption, description, quantity, and price of a post.
+    It checks if the post exists and if the user is authorized to update it.
+    If successful, it sends a JSON response indicating the post was updated.
+    In case of an error, it sends a JSON response with the error message.
+
+PARAMETERS
+    req - The request object containing the post ID in the params and updated data in the body.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response indicating the success or failure of the operation.
+*/
 exports.updateCaption = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -190,7 +293,30 @@ exports.updateCaption = async (req, res) => {
     });
   }
 };
+/*
+commentOnPost()
 
+NAME
+    commentOnPost
+
+SYNOPSIS
+    commentOnPost(req, res);
+
+DESCRIPTION
+    This function allows users to comment on a post.
+    It checks if the post exists and if the user has already commented.
+    If the user has already commented, it updates the comment.
+    If the user has not commented, it adds the comment.
+    If successful, it sends a JSON response indicating the comment was added or updated.
+    In case of an error, it sends a JSON response with the error message.
+
+PARAMETERS
+    req - The request object containing the post ID in the params and comment data in the body.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response indicating the success or failure of the operation.
+*/
 exports.commentOnPost = async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
@@ -297,7 +423,29 @@ exports.deleteComment = async (req, res) => {
 };
 
 
-//get product details
+/*
+getProductDetails()
+
+NAME
+    getProductDetails
+
+SYNOPSIS
+    getProductDetails(req, res, next);
+
+DESCRIPTION
+    This function retrieves the details of a specific post by its ID.
+    It checks if the post exists in the database.
+    If the post is found, it sends a JSON response with the post details.
+    If the post is not found, it sends a JSON response indicating that the post was not found.
+
+PARAMETERS
+    req - The request object containing the post ID in the params.
+    res - The response object used to send back the JSON response.
+    next - The next middleware function to be called.
+
+RETURNS
+    A JSON response containing the post details or an error message if the post is not found.
+*/
 exports.getProductDetails = async(req, res, next) => {
  
   const post = await Post.findById(req.params.id);

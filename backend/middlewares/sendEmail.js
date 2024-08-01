@@ -14,6 +14,32 @@ const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN});
 
+/*
+sendEmail()
+
+NAME
+    sendEmail
+
+SYNOPSIS
+    sendEmail(options);
+
+DESCRIPTION
+    This function sends an email using NodeMailer with Gmail's OAuth2 authentication.
+    It uses the provided options to configure the email details such as recipient, subject, and message.
+    The OAuth2 client credentials are retrieved from environment variables.
+    It generates an access token and uses it for authentication with Gmail.
+    Finally, it sends the email with the configured transporter.
+
+PARAMETERS
+    options - An object containing the email details:
+        - email: The recipient's email address.
+        - subject: The subject of the email.
+        - message: The body text of the email.
+
+RETURNS
+    This function does not return a value. It sends the email asynchronously.
+*/
+
 exports.sendEmail = async (options) => {
 
    const accessToken = await oAuth2Client.getAccessToken();

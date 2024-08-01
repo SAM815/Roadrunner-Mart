@@ -1,4 +1,15 @@
-/* Header.css */
+/*
+Header.css
+NAME
+    Header.css
+SYNOPSIS
+    Styles for the header component.
+DESCRIPTION
+    Configures the layout and appearance of the header, including links, icons, and logo. Centers the header content, styles interactive elements with transitions, and adjusts sizes and positions for different screen sizes.
+RETURNS
+    CSS styles for a flexible header layout with centered icons, logo, and cart indicator. Includes hover effects and responsive adjustments for smaller screens.
+*/
+
 .header {
   display: flex;
   justify-content: center;

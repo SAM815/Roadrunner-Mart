@@ -8,6 +8,24 @@ import Loader from "../Loader/Loader";
 import { Typography } from "@mui/material";
 import { useAlert } from "react-alert";
 
+/*
+Home()
+NAME
+    Home
+SYNOPSIS
+    Home()
+DESCRIPTION
+    This React component is the main page of the application, displaying posts from followed users on the left side and a list of users on the right side. It fetches posts and user data from the Redux store and handles loading and error states.
+
+    The component uses Material UI for typography and integrates `react-alert` for displaying notifications. It conditionally renders a loader when data is being fetched and displays posts and users once the data is available.
+
+    The `useEffect` hooks are used to fetch data and handle errors or messages. If there are any errors, they are displayed using alerts. 
+
+RETURNS
+    Returns a React component that displays a list of posts and users. If data is still loading, a `Loader` component is shown. If no posts or users are available, appropriate messages are displayed.
+*/
+
+
 const Home = () => {
   const dispatch = useDispatch();
   const alert = useAlert();

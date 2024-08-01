@@ -1,3 +1,16 @@
+/*
+Success.css
+NAME
+    Success.css
+SYNOPSIS
+    Styles for the order success page.
+DESCRIPTION
+    Configures layout, typography, and button styles for the order success page. Includes responsive adjustments for smaller screens.
+RETURNS
+    CSS styles for a centered and visually appealing order success message.
+*/
+
+
 .orderSuccess{
     align-items: center;
     text-align: center;

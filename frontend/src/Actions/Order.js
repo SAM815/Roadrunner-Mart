@@ -1,5 +1,24 @@
  import axios from "axios"
 
+ /*
+NAME
+    createOrder - Action to create a new order
+
+SYNOPSIS
+    createOrder(order)
+
+DESCRIPTION
+    This function dispatches an action to create a new order.
+    It sends a POST request to the /api/v1/order/new endpoint with the order data.
+    Depending on the response, it dispatches either CREATE_ORDER_SUCCESS or CREATE_ORDER_FAIL.
+
+PARAMETERS
+    order - The order details to be created
+
+RETURNS
+    None
+*/
+
 export const createOrder = (order) => async (dispatch) => {
     try {
         console.log("The order is: ", order);
@@ -32,7 +51,24 @@ export const createOrder = (order) => async (dispatch) => {
     }
 };
 
+/*
+NAME
+    myOrders - Action to fetch user's orders
 
+SYNOPSIS
+    myOrders()
+
+DESCRIPTION
+    This function dispatches an action to fetch the current user's orders.
+    It sends a GET request to the /api/v1/orders/me endpoint.
+    Depending on the response, it dispatches either MY_ORDER_SUCCESS or MY_ORDER_FAIL.
+
+PARAMETERS
+    None
+
+RETURNS
+    None
+*/
 export const myOrders = () => async (dispatch) => {
     try {
         dispatch({
@@ -52,7 +88,24 @@ export const myOrders = () => async (dispatch) => {
     }
 }
 
+/*
+NAME
+    getOrderDetails - Action to fetch details of a specific order
 
+SYNOPSIS
+    getOrderDetails(id)
+
+DESCRIPTION
+    This function dispatches an action to fetch the details of a specific order.
+    It sends a GET request to the /api/v1/orders/:id endpoint.
+    Depending on the response, it dispatches either ORDER_DETAIL_SUCCESS or ORDER_DETAIL_FAIL.
+
+PARAMETERS
+    id - The ID of the order to fetch details for
+
+RETURNS
+    None
+*/
 
 export const getOrderDetails = (id) => async (dispatch) => {
     try {
@@ -74,8 +127,23 @@ export const getOrderDetails = (id) => async (dispatch) => {
 }
 
 
+/*
+NAME
+    clearErrors - Action to clear errors
 
-//Clearing Errors
+SYNOPSIS
+    clearErrors()
+
+DESCRIPTION
+    This function dispatches an action to clear any errors in the state.
+
+PARAMETERS
+    None
+
+RETURNS
+    None
+*/
+
 export const clearErrors = () => async (dispatch) => {
     dispatch({
         type:"CLEAR_ERRORS"
@@ -84,7 +152,24 @@ export const clearErrors = () => async (dispatch) => {
 
 
 
-//Get all order -admin
+/*
+NAME
+    getAllOrders - Action to fetch all orders (admin only)
+
+SYNOPSIS
+    getAllOrders()
+
+DESCRIPTION
+    This function dispatches an action to fetch all orders. (admin only)
+    It sends a GET request to the /api/v1/admin/orders endpoint.
+    Depending on the response, it dispatches either ALL_ORDER_SUCCESS or ALL_ORDER_FAIL.
+
+PARAMETERS
+    None
+
+RETURNS
+    None
+*/
 export const getAllOrders = () => async (dispatch) => {
     try {
         dispatch({
@@ -104,7 +189,25 @@ export const getAllOrders = () => async (dispatch) => {
     }
 }
 
-//Update an order - admin
+/*
+NAME
+    updateOrder - Action to update an order (admin only)
+
+SYNOPSIS
+    updateOrder(id, order)
+
+DESCRIPTION
+    This function dispatches an action to update an order. (admin only)
+    It sends a PUT request to the /api/v1/admin/order/:id endpoint with the updated order data.
+    Depending on the response, it dispatches either UPDATE_ORDER_SUCCESS or UPDATE_ORDER_FAIL.
+
+PARAMETERS
+    id - The ID of the order to update
+    order - The updated order details
+
+RETURNS
+    None
+*/
 export const updateOrder = (id, order) => async (dispatch) => {
     try {
         dispatch({
@@ -131,7 +234,24 @@ export const updateOrder = (id, order) => async (dispatch) => {
     }
 }
 
-//Delete an order -admin
+/*
+NAME
+    deleteOrder - Action to delete an order (admin only)
+
+SYNOPSIS
+    deleteOrder(id)
+
+DESCRIPTION
+    This function dispatches an action to delete an order. (admin only)
+    It sends a DELETE request to the /api/v1/admin/order/:id endpoint.
+    Depending on the response, it dispatches either DELETE_ORDER_SUCCESS or DELETE_ORDER_FAIL.
+
+PARAMETERS
+    id - The ID of the order to delete
+
+RETURNS
+    None
+*/
 export const deleteOrder = (id) => async (dispatch) => {
     try {
         dispatch({

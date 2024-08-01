@@ -3,6 +3,21 @@ import React from 'react'
 import {LocalShipping, LibraryAddCheck, AccountBalance} from "@mui/icons-material"
 import {Stepper, Step, StepLabel} from "@mui/material"
 import "./CheckoutSteps.css"
+
+/*
+CheckoutSteps()
+NAME
+    CheckoutSteps
+SYNOPSIS
+    CheckoutSteps({ activeSteps });
+    - activeSteps (number): The current step index to determine the active and completed steps.
+DESCRIPTION
+    This React component renders a Stepper to show the progression of the checkout process. The Stepper is used to visually indicate the stages of checkout, such as Shipping Details, Confirm Order, and Payment.
+    It uses Material-UI's Stepper component to display each step with a label and an associated icon. The style of the step labels changes based on whether the step is active or completed.
+RETURNS
+    Returns a React component that renders a Stepper with styled steps based on the current active step.
+*/
+
 const CheckoutSteps = ({activeSteps}) => {
     const steps = [
         {

@@ -1,3 +1,16 @@
+/*
+CheckoutSteps.css
+NAME
+    CheckoutSteps.css
+SYNOPSIS
+    Styles for step connectors in stepper components.
+DESCRIPTION
+    Hides default lines, sets connector color, and styles active/completed steps.
+RETURNS
+    CSS styles for customizing step connectors in steppers.
+*/
+
+
 .MuiStepConnector-line{
     display: none !important;
 }

@@ -1,3 +1,16 @@
+/*
+Shipping.css
+NAME
+    Shipping.css
+SYNOPSIS
+    Styles for the shipping form and container.
+DESCRIPTION
+    Configures layout, typography, input fields, and button styles for the shipping form. Includes responsive adjustments for smaller screens.
+RETURNS
+    CSS styles for a clear and responsive shipping interface.
+*/
+
+
 .shippingContainer {
     margin-top: 2vmax;
     width: 100vw;

@@ -33,7 +33,19 @@ import ProductList from "./Components/Admin/ProductList";
 import OrderList from "./Components/Admin/OrderList";
 import ProcessOrder from "./Components/Admin/ProcessOrder";
 
-
+/*
+App
+NAME
+    App
+SYNOPSIS
+    App();
+DESCRIPTION
+    This is the main component of the application, serving as the entry point for rendering different routes and components.
+PARAMETERS
+    None.
+RETURNS
+    Returns a React component that manages the routing and rendering of various parts of the application.
+*/
 
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");

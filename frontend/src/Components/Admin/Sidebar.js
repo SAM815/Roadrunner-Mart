@@ -5,6 +5,20 @@ import { Link } from 'react-router-dom';
 import { TreeView, TreeItem } from "@mui/lab"
 import { ExpandMore, PostAdd, Add, ImportExport, ListAlt, Dashboard, RateReview, People } from "@mui/icons-material"
 
+/*
+Sidebar()
+NAME
+    Sidebar
+SYNOPSIS
+    Sidebar();
+DESCRIPTION
+    This React component displays a sidebar navigation menu.
+    It includes links to the dashboard, products, and orders.
+    The product section is expandable, showing options for viewing all products or creating a new product.
+RETURNS
+    Returns a React component that renders a sidebar with navigation links.
+*/
+
 const Sidebar = () => {
     return (
       <div className='sideBar'>

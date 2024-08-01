@@ -1,3 +1,16 @@
+/*
+ProcessOrder.css
+NAME
+    ProcessOrder.css
+SYNOPSIS
+    Styles for the order update form.
+DESCRIPTION
+    Configures layout, padding, and styling for form elements, including responsive adjustments for smaller screens.
+RETURNS
+    CSS styles for a user-friendly and responsive order update form.
+*/
+
+
 .updateOrderForm {
     margin: 5vmax 0;
     padding: 3vmax;

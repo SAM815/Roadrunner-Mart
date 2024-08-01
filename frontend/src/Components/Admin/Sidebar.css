@@ -1,3 +1,15 @@
+/*
+SideBar.css
+NAME
+    SideBar.css
+SYNOPSIS
+    Styles for the sidebar layout and links.
+DESCRIPTION
+    Configures the sidebar's appearance, including link styles, hover effects, and typography. 
+RETURNS
+    CSS styles for an engaging and interactive sidebar interface.
+*/
+
 .sideBar{
     padding: 4rem 0;
     background-color: rgb(255, 255, 255);

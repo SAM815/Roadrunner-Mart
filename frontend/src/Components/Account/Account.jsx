@@ -3,12 +3,24 @@ import React, { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteMyProfile, getMyPosts, logoutUser,  } from "../../Actions/User";
+import { deleteMyProfile, getMyPosts, logoutUser, userSellerAction } from "../../Actions/User";
 import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
 import "./Account.css";
 
+/*
+Account()
+NAME
+    Account
+SYNOPSIS
+    Account();
+DESCRIPTION
+    This React component displays the user's account information including posts, followers, and following lists.
+    It allows the user to logout, update profile and password, and delete their profile.
+RETURNS
+    Returns a React component that manages and displays the user's account details.
+*/
 
 
 const Account = () => {
@@ -27,6 +39,16 @@ const Account = () => {
   const [followersToggle, setFollowersToggle] = useState(false);
 
   const [followingToggle, setFollowingToggle] = useState(false);
+
+  const [isSeller, setIsSeller] = useState(user?.seller);
+
+  const handleCheck = async () => {
+    setIsSeller((prev) => !prev); // Toggle local state immediately
+    await dispatch(userSellerAction()); // Ensure the action is awaited
+    
+    alert.success("Seller status updated");
+    window.location.reload();
+  };
 
  
 
@@ -122,7 +144,22 @@ const Account = () => {
           <Typography>Posts</Typography>
           <Typography>{user.posts.length}</Typography>
         </div>
+        <div>
+          <Typography variant="subtitle1" >
+            Seller Account
+          </Typography>
+          <FormControlLabel
+            control={<Switch
+              checked={isSeller}
+            
+              onChange={handleCheck}
 
+            />}
+            
+            label={isSeller ? 'Active' : 'Inactive'}
+          />
+
+        </div>
         
         
 

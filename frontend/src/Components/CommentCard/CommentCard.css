@@ -1,3 +1,16 @@
+/*
+CommentCard.css
+NAME
+    CommentCard.css
+SYNOPSIS
+    Styles for user comments section.
+DESCRIPTION
+    Configures the layout and appearance of user comments. Ensures a flexible layout with centered alignment for profile images and links. Adds interactive hover effects and styles for buttons.
+RETURNS
+    CSS styles for displaying user comments with profile images, links, and buttons. Includes hover effects for links and custom styling for buttons.
+*/
+
+
 .commentUser {
     display: flex;
     align-items: center;

@@ -1,4 +1,16 @@
-/* Account.css */
+
+/*
+Account.css
+NAME
+    Account.css
+SYNOPSIS
+    Styles for user account pages.
+DESCRIPTION
+    Sets up grid layout with distinct left and right sections. Styles for profile and posts sections, with responsive design adjustments for smaller screens.
+RETURNS
+    CSS styles for a structured and visually appealing user account page.
+*/
+
 .account {
     box-sizing: border-box;
     display: grid;

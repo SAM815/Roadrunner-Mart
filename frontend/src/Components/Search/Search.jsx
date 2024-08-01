@@ -5,6 +5,21 @@ import { getAllUsers } from "../../Actions/User";
 import User from "../User/User";
 import "./Search.css";
 
+/*
+Search()
+NAME
+    Search
+SYNOPSIS
+    Search()
+DESCRIPTION
+    A React component for searching users by name. Displays a search form and results of user matches.
+    Uses local state to manage the search input and Redux to handle user data fetching. Material-UI components are used for styling.
+
+RETURNS
+    A form with a search input and button. Displays search results as a list of user components.
+*/
+
+
 const Search = () => {
   const [name, setName] = React.useState("");
 

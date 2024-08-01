@@ -1,3 +1,15 @@
+/*
+ProductList.css
+NAME
+    ProductList.css
+SYNOPSIS
+    Styles for the product list container and table.
+DESCRIPTION
+    Configures layout, typography, and hover effects for product list display. Includes responsive adjustments for smaller screens.
+RETURNS
+    CSS styles for a clean and interactive product list interface.
+*/
+
 .productListContainer {
     width: 100%;
     box-sizing:border-box;

@@ -1,3 +1,16 @@
+/*
+Search.css
+NAME
+    Search.css
+SYNOPSIS
+    Styles for the search page.
+DESCRIPTION
+    Configures the layout, styling, and responsive design for the search form and results display. Ensures the search form is centered and visually appealing on both desktop and mobile devices. Adjusts input field styling and form layout for different screen sizes.
+RETURNS
+    CSS styles for a user-friendly and responsive search page, with appropriate spacing and alignment for search forms and results.
+*/
+
+
 .search {
     height: 100vh;
     background-color: #862633;

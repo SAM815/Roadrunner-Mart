@@ -1,3 +1,14 @@
+/*
+Cart.css
+NAME
+    Cart.css
+SYNOPSIS
+    Styles for the shopping cart and related components.
+DESCRIPTION
+    Configures layout, input styles, and responsiveness for the cart page, including subtotal, total, and checkout button.
+RETURNS
+    CSS styles for a functional and responsive shopping cart interface.
+*/
 
 .emptyCart{
     margin: auto;

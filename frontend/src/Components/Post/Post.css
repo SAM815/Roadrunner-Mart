@@ -1,4 +1,15 @@
-/* //Post.css */
+/*
+Post.css
+NAME
+    Post.css
+SYNOPSIS
+    Styles for individual post components.
+DESCRIPTION
+    Configures the layout and styling for individual post elements, including headers, images, product details, and footers. Features a grid layout for product details, responsive design for mobile screens, and custom styling for buttons and form elements. Includes specific adjustments for different screen sizes to ensure usability and visual appeal.
+RETURNS
+    CSS styles for a clean and responsive post layout with visual enhancements for interactive elements and forms.
+*/
+
 .post {
   width: 60%;
   background-color: #fff;

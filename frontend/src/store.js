@@ -1,3 +1,19 @@
+
+
+/*
+store.js
+NAME
+    store.js
+SYNOPSIS
+    Redux store configuration for managing application state.
+DESCRIPTION
+    This file sets up the Redux store by combining reducers, applying middleware (including thunk for asynchronous actions), and enhancing it with Redux DevTools for debugging.
+PARAMETERS
+    None.
+RETURNS
+    Configured Redux store for the application.
+*/
+
 import { configureStore } from "@reduxjs/toolkit";
 import {
   allUsersReducer,

@@ -8,6 +8,19 @@ import {Typography} from "@mui/material"
 import {RemoveShoppingCart} from "@mui/icons-material"
 import { Link, useNavigate } from 'react-router-dom';
 
+/*
+Cart()
+NAME
+    Cart
+SYNOPSIS
+    Cart();
+DESCRIPTION
+    This React component renders the shopping cart page. It displays the cart items with their details, including product name, quantity, and subtotal. 
+    It provides functionalities to increase or decrease the quantity of items, remove items from the cart, and proceed to checkout.
+RETURNS
+    Returns a React component that renders the shopping cart page with item details, and buttons to adjust quantities, remove items, and proceed to checkout.
+*/
+
 const Cart = () => {
     const dispatch = useDispatch();
     const alert = useAlert();

@@ -11,6 +11,21 @@ import "./Payment.css";
 import { CreditCard, Event, VpnKey } from "@mui/icons-material"
 import { useNavigate } from 'react-router-dom';
 
+/*
+Payment()
+NAME
+    Payment
+SYNOPSIS
+    Payment()
+DESCRIPTION
+    This React component handles the payment process for an order. It integrates with Stripe to handle card payments. The component collects payment details from the user, processes the payment, and dispatches an action to create the order upon successful payment. If an error occurs, it alerts the user.
+
+    The component retrieves order information from `sessionStorage`, sets up payment details, and uses the Stripe API to process the payment. Upon successful payment, it dispatches an action to create the order and navigates to a success page.
+
+RETURNS
+    Returns a React component that displays a payment form with fields for card information and a button to submit the payment. The component manages payment processing and error handling.
+*/
+
 const Payment = () => {
     const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
 

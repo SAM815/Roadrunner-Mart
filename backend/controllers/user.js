@@ -5,6 +5,30 @@ const crypto = require("crypto");
 const cloudinary = require("cloudinary");
 const Order = require("../models/Order");
 
+/*
+register()
+
+NAME
+    register
+
+SYNOPSIS
+    register(req, res);
+
+DESCRIPTION
+    This function registers a new user by creating a new entry in the database with the provided details.
+    It checks if the user already exists by email. If the user exists, it returns an error message.
+    If not, it uploads the avatar to Cloudinary, creates the user, and generates a token.
+    The token is sent back in a cookie along with the user details.
+
+PARAMETERS
+    req - The request object containing the user registration details.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status, user details, and a token if registration is successful,
+    or an error message if registration fails.
+*/
+
 exports.register = async (req, res) => {
   try {
     const { name, email, password, avatar } = req.body;
@@ -47,6 +71,28 @@ exports.register = async (req, res) => {
   }
 };
 
+/*
+login()
+
+NAME
+    login
+
+SYNOPSIS
+    login(req, res);
+
+DESCRIPTION
+    This function logs in a user by checking the provided email and password.
+    It validates the user's credentials, generates a token, and sends it back in a cookie along with user details.
+    If the user does not exist or the password is incorrect, it returns an error message.
+
+PARAMETERS
+    req - The request object containing the user login details.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status, user details, and a token if login is successful,
+    or an error message if login fails.
+*/
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -90,7 +136,26 @@ exports.login = async (req, res) => {
     });
   }
 };
+/*
+logout()
 
+NAME
+    logout
+
+SYNOPSIS
+    logout(req, res);
+
+DESCRIPTION
+    This function logs out the user by clearing the token cookie.
+    It sends a response indicating that the user has been logged out.
+
+PARAMETERS
+    req - The request object.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and a message indicating that the user has been logged out.
+*/
 exports.logout = async (req, res) => {
   try {
     res
@@ -108,6 +173,28 @@ exports.logout = async (req, res) => {
   }
 };
 
+/*
+followUser()
+
+NAME
+    followUser
+
+SYNOPSIS
+    followUser(req, res);
+
+DESCRIPTION
+    This function handles the action of following or unfollowing a user.
+    It checks if the logged-in user is already following the target user.
+    If so, it unfollows the user; otherwise, it follows the user.
+    It updates the respective lists of followers and following for both users.
+
+PARAMETERS
+    req - The request object containing the target user's ID in the params and the logged-in user's ID in the session.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and a message indicating whether the user was followed or unfollowed.
+*/
 exports.followUser = async (req, res) => {
   try {
     const userToFollow = await User.findById(req.params.id);
@@ -154,6 +241,29 @@ exports.followUser = async (req, res) => {
   }
 };
 
+/*
+updatePassword()
+
+NAME
+    updatePassword
+
+SYNOPSIS
+    updatePassword(req, res);
+
+DESCRIPTION
+    This function updates the password for the logged-in user.
+    It validates the provided old password and updates it with the new password if the old password is correct.
+    It sends a response indicating whether the password was updated successfully or if an error occurred.
+
+PARAMETERS
+    req - The request object containing the old and new passwords.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and a message indicating whether the password was updated successfully,
+    or an error message if the update fails.
+*/
+
 exports.updatePassword = async (req, res) => {
   try {
     const user = await User.findById(req.user._id).select("+password");
@@ -190,6 +300,29 @@ exports.updatePassword = async (req, res) => {
     });
   }
 };
+
+/*
+updateProfile()
+
+NAME
+    updateProfile
+
+SYNOPSIS
+    updateProfile(req, res);
+
+DESCRIPTION
+    This function updates the profile details of the logged-in user.
+    It updates the user's name, email, and avatar if provided.
+    It sends a response indicating whether the profile was updated successfully or if an error occurred.
+
+PARAMETERS
+    req - The request object containing the updated profile details.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and a message indicating whether the profile was updated successfully,
+    or an error message if the update fails.
+*/
 
 exports.updateProfile = async (req, res) => {
   try {
@@ -228,6 +361,32 @@ exports.updateProfile = async (req, res) => {
     });
   }
 };
+
+/*
+deleteMyProfile()
+
+NAME
+    deleteMyProfile
+
+SYNOPSIS
+    deleteMyProfile(req, res);
+
+DESCRIPTION
+    This function deletes the logged-in user's profile and associated data.
+    It removes the user's avatar from Cloudinary, deletes all posts, orders, and comments associated with the user,
+    and updates the followers and following lists.
+    The function logs out the user by clearing the token cookie and sends a response indicating whether the profile was deleted successfully.
+
+PARAMETERS
+    req - The request object.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and a message indicating whether the profile was deleted successfully,
+    or an error message if the deletion fails.
+*/
+
+
 
 exports.deleteMyProfile = async (req, res) => {
   try {
@@ -317,6 +476,26 @@ exports.deleteMyProfile = async (req, res) => {
   }
 };
 
+/*
+myProfile()
+
+NAME
+    myProfile
+
+SYNOPSIS
+    myProfile(req, res);
+
+DESCRIPTION
+    This function retrieves the details of the logged-in user's profile.
+    It populates the user's posts, followers, and following lists and sends them in a JSON response.
+
+PARAMETERS
+    req - The request object.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and the user's profile details.
+*/
 exports.myProfile = async (req, res) => {
   try {
     const user = await User.findById(req.user._id).populate(
@@ -334,6 +513,29 @@ exports.myProfile = async (req, res) => {
     });
   }
 };
+
+/*
+getUserProfile()
+
+NAME
+    getUserProfile
+
+SYNOPSIS
+    getUserProfile(req, res);
+
+DESCRIPTION
+    This function retrieves the profile details of a specific user by their ID.
+    It populates the user's posts, followers, and following lists and sends them in a JSON response.
+    If the user is not found, it returns an error message.
+
+PARAMETERS
+    req - The request object containing the user ID in the params.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and the user's profile details,
+    or an error message if the user is not found.
+*/
 
 exports.getUserProfile = async (req, res) => {
   try {
@@ -360,6 +562,27 @@ exports.getUserProfile = async (req, res) => {
   }
 };
 
+/*
+getAllUsers()
+
+NAME
+    getAllUsers
+
+SYNOPSIS
+    getAllUsers(req, res);
+
+DESCRIPTION
+    This function retrieves a list of users based on the provided name query.
+    It performs a case-insensitive search and sends the list of users in a JSON response.
+
+PARAMETERS
+    req - The request object containing the name query in the query parameters.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and the list of users matching the query.
+*/
+
 exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find({
@@ -378,6 +601,29 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 const frontendHost = process.env.frontendHost;
+
+/*
+forgotPassword()
+
+NAME
+    forgotPassword
+
+SYNOPSIS
+    forgotPassword(req, res);
+
+DESCRIPTION
+    This function handles the password reset process by generating a reset token for the user.
+    It sends an email with a link to reset the password. If the email is sent successfully, it returns a success message.
+    If an error occurs, it clears the reset token and sends an error message.
+
+PARAMETERS
+    req - The request object containing the user's email.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and a message indicating whether the email was sent successfully,
+    or an error message if the process fails.
+*/
 
 exports.forgotPassword = async (req, res) => {
   try {
@@ -429,6 +675,28 @@ exports.forgotPassword = async (req, res) => {
   }
 };
 
+/*
+resetPassword()
+
+NAME
+    resetPassword
+
+SYNOPSIS
+    resetPassword(req, res);
+
+DESCRIPTION
+    This function handles the actual password reset by validating the reset token and updating the user's password.
+    It clears the reset token and expiration after updating the password and sends a response indicating success.
+
+PARAMETERS
+    req - The request object containing the reset token in the params and the new password in the body.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and a message indicating whether the password was updated successfully,
+    or an error message if the reset token is invalid or expired.
+*/
+
 exports.resetPassword = async (req, res) => {
   try {
     const resetPasswordToken = crypto
@@ -466,7 +734,26 @@ exports.resetPassword = async (req, res) => {
   }
 };
 
-//get admin products/posts
+/*
+getMyPosts()
+
+NAME
+    getMyPosts
+
+SYNOPSIS
+    getMyPosts(req, res);
+
+DESCRIPTION
+    This function retrieves all posts created by the logged-in user.
+    It populates the posts with likes and comments and sends them in a JSON response.
+
+PARAMETERS
+    req - The request object.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and the list of posts created by the user.
+*/
 exports.getMyPosts = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
@@ -492,6 +779,26 @@ exports.getMyPosts = async (req, res) => {
   }
 };
 
+/*
+getUserPosts()
+
+NAME
+    getUserPosts
+
+SYNOPSIS
+    getUserPosts(req, res);
+
+DESCRIPTION
+    This function retrieves all posts created by a specific user by their ID.
+    It populates the posts with likes and comments and sends them in a JSON response.
+
+PARAMETERS
+    req - The request object containing the user ID in the params.
+    res - The response object used to send back the JSON response.
+
+RETURNS
+    A JSON response with success status and the list of posts created by the user.
+*/
 exports.getUserPosts = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -518,7 +825,7 @@ exports.getUserPosts = async (req, res) => {
   }
 };
 
-//Creating Seller account i.e. activating seller account
+// //Creating Seller account i.e. activating seller account
 
 exports.createSellerAccount = async(req,res) => {
   

@@ -1,3 +1,15 @@
+/*
+Payment.css
+NAME
+    Payment.css
+SYNOPSIS
+    Styles for the payment form and its container.
+DESCRIPTION
+    Configures layout, typography, input fields, and button styles for the payment form. Includes responsive adjustments for smaller screens.
+RETURNS
+    CSS styles for a user-friendly and responsive payment interface.
+*/
+
 .paymentContainer {
     display: grid;
     background-color: rgb(255, 255, 255);

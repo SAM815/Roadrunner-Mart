@@ -22,6 +22,23 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import logo from "../../Images/RoadrunnerMart.png";
 
+/*
+Header()
+NAME
+    Header
+SYNOPSIS
+    Header()
+DESCRIPTION
+    This React component renders the header of the application, which includes navigation links and icons for different sections of the website. The header includes links to home, new post creation, search, user account, seller dashboard (if applicable), and cart. It also displays the number of items in the cart if any.
+
+    The component uses Material UI's `Tooltip`, `Typography`, and various icons for visual representation. The `Link` component from `react-router-dom` is used for navigation between different routes.
+
+    The `tab` state is used to highlight the currently active tab. When a tab is clicked, it updates the state to reflect the active route. Conditional rendering is used to display different icons based on the active tab and user permissions (e.g., seller dashboard link is only enabled if the user has a seller account).
+
+RETURNS
+    Returns a React component that displays a navigation header with icons and links for different sections of the application.
+*/
+
 
 const Header = () => {
   const [tab, setTab] = useState(window.location.pathname);

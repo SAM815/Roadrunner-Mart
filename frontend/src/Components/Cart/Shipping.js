@@ -8,6 +8,21 @@ import { Country, State } from "country-state-city";
 import { useAlert } from 'react-alert'
 import { useNavigate } from 'react-router-dom'
 
+/*
+Shipping()
+NAME
+    Shipping
+SYNOPSIS
+    Shipping()
+DESCRIPTION
+    This React component manages the collection of shipping information from the user. It allows users to input their shipping details, such as address, city, state, country, pin code, and phone number. The component includes validation for the phone number and updates the Redux store with the shipping information upon form submission. It also handles navigation to the order confirmation page.
+
+    The component uses `CheckoutSteps` to indicate the current step in the checkout process. It includes a form with fields for shipping details and dropdowns for selecting the country and state. The `Country` and `State` libraries are used to populate these dropdowns.
+
+RETURNS
+    Returns a React component that displays a form for entering shipping details. Includes validation for the phone number and manages navigation to the order confirmation page after form submission.
+*/
+
 const Shipping = () => {
 
     const dispatch = useDispatch();

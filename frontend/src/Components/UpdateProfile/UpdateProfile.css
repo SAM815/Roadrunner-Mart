@@ -1,3 +1,15 @@
+/*
+UpdateProfile.css
+NAME
+    UpdateProfile.css
+SYNOPSIS
+    Styles for the profile update page.
+DESCRIPTION
+    Configures the layout and styling for the profile update form, including input fields and file upload button. Incorporates responsive design adjustments to ensure usability on smaller screens. Ensures a centered and visually appealing form with proper spacing and rounded corners.
+RETURNS
+    CSS styles for a user-friendly profile update interface with responsive elements and a clean, modern design.
+*/
+
 .updateProfile {
     min-height: 100vh;
     background-color: #862633;

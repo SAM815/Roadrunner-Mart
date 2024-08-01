@@ -1,0 +1,94 @@
+"filename", "language", "JavaScript JSX", "CSS", "JavaScript", "JSON", "Markdown", "HTML", "comment", "blank", "total"
+"d:\MERN App\RamaporoadRunners-Mart\backend\app.js", "JavaScript", 0, 0, -21, 0, 0, 0, -20, -19, -60
+"d:\MERN App\RamaporoadRunners-Mart\backend\config\database.js", "JavaScript", 0, 0, -7, 0, 0, 0, -18, -2, -27
+"d:\MERN App\RamaporoadRunners-Mart\backend\controllers\order.js", "JavaScript", 0, 0, -136, 0, 0, 0, -157, -43, -336
+"d:\MERN App\RamaporoadRunners-Mart\backend\controllers\payment.js", "JavaScript", 0, 0, -16, 0, 0, 0, -44, -8, -68
+"d:\MERN App\RamaporoadRunners-Mart\backend\controllers\post.js", "JavaScript", 0, 0, -247, 0, 0, 0, -164, -53, -464
+"d:\MERN App\RamaporoadRunners-Mart\backend\controllers\user.js", "JavaScript", 0, 0, -444, 0, 0, 0, -307, -106, -857
+"d:\MERN App\RamaporoadRunners-Mart\backend\middlewares\auth.js", "JavaScript", 0, 0, -23, 0, 0, 0, -24, -14, -61
+"d:\MERN App\RamaporoadRunners-Mart\backend\middlewares\sendEmail.js", "JavaScript", 0, 0, -29, 0, 0, 0, -27, -12, -68
+"d:\MERN App\RamaporoadRunners-Mart\backend\models\Order.js", "JavaScript", 0, 0, -104, 0, 0, 0, -55, -12, -171
+"d:\MERN App\RamaporoadRunners-Mart\backend\models\Post.js", "JavaScript", 0, 0, -48, 0, 0, 0, -47, -7, -102
+"d:\MERN App\RamaporoadRunners-Mart\backend\models\user.js", "JavaScript", 0, 0, -75, 0, 0, 0, -55, -17, -147
+"d:\MERN App\RamaporoadRunners-Mart\backend\routes\order.js", "JavaScript", 0, 0, -24, 0, 0, 0, -71, -11, -106
+"d:\MERN App\RamaporoadRunners-Mart\backend\routes\payment.js", "JavaScript", 0, 0, -7, 0, 0, 0, -34, -5, -46
+"d:\MERN App\RamaporoadRunners-Mart\backend\routes\post.js", "JavaScript", 0, 0, -28, 0, 0, 0, -64, -8, -100
+"d:\MERN App\RamaporoadRunners-Mart\backend\routes\user.js", "JavaScript", 0, 0, -36, 0, 0, 0, -94, -18, -148
+"d:\MERN App\RamaporoadRunners-Mart\backend\server.js", "JavaScript", 0, 0, -13, 0, 0, 0, -13, -8, -34
+"d:\MERN App\RamaporoadRunners-Mart\frontend\README.md", "Markdown", 0, 0, 0, 0, 38, 0, 0, 33, 71
+"d:\MERN App\RamaporoadRunners-Mart\frontend\package-lock.json", "JSON", 0, 0, 0, 19499, 0, 0, 0, 1, 19500
+"d:\MERN App\RamaporoadRunners-Mart\frontend\package.json", "JSON", 0, 0, 0, 57, 0, 0, 0, 1, 58
+"d:\MERN App\RamaporoadRunners-Mart\frontend\public\index.html", "HTML", 0, 0, 0, 0, 0, 20, 23, 1, 44
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\Cart.js", "JavaScript", 0, 0, 30, 0, 0, 0, 56, 11, 97
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\Order.js", "JavaScript", 0, 0, 118, 0, 0, 0, 125, 31, 274
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\Post.js", "JavaScript", 0, 0, 142, 0, 0, 0, 118, 11, 271
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\User.js", "JavaScript", 0, 0, 328, 0, 0, 0, 296, 41, 665
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\App.css", "CSS", 0, 4, 0, 0, 0, 0, 0, 1, 5
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\App.js", "JavaScript", 0, 0, 132, 0, 0, 0, 13, 48, 193
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Account\Account.css", "CSS", 0, 73, 0, 0, 0, 0, 11, 15, 99
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Account\Account.jsx", "JavaScript JSX", 178, 0, 0, 0, 0, 0, 12, 48, 238
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Dashboard.css", "CSS", 0, 85, 0, 0, 0, 0, 11, 20, 116
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Dashboard.js", "JavaScript", 0, 0, 91, 0, 0, 0, 13, 29, 133
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\OrderList.js", "JavaScript", 0, 0, 114, 0, 0, 0, 13, 17, 144
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProcessOrder.css", "CSS", 0, 38, 0, 0, 0, 0, 11, 8, 57
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProcessOrder.js", "JavaScript", 0, 0, 178, 0, 0, 0, 13, 34, 225
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProductList.css", "CSS", 0, 46, 0, 0, 0, 0, 11, 12, 69
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProductList.js", "JavaScript", 0, 0, 73, 0, 0, 0, 13, 21, 107
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Sidebar.css", "CSS", 0, 33, 0, 0, 0, 0, 11, 13, 57
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Sidebar.js", "JavaScript", 0, 0, 43, 0, 0, 0, 13, 15, 71
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Cart.css", "CSS", 0, 157, 0, 0, 0, 0, 12, 37, 206
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Cart.js", "JavaScript", 0, 0, 87, 0, 0, 0, 12, 20, 119
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CartItemCart.css", "CSS", 0, 50, 0, 0, 0, 0, 11, 16, 77
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CartItemCart.js", "JavaScript", 0, 0, 16, 0, 0, 0, 14, 3, 33
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CheckoutSteps.css", "CSS", 0, 11, 0, 0, 0, 0, 11, 5, 27
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CheckoutSteps.js", "JavaScript", 0, 0, 44, 0, 0, 0, 13, 9, 66
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\ConfirmOrder.css", "CSS", 0, 165, 0, 0, 0, 0, 11, 40, 216
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\ConfirmOrder.js", "JavaScript", 0, 0, 106, 0, 0, 0, 16, 14, 136
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Payment.css", "CSS", 0, 75, 0, 0, 0, 0, 11, 15, 101
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Payment.js", "JavaScript", 0, 0, 123, 0, 0, 0, 18, 32, 173
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Shipping.css", "CSS", 0, 95, 0, 0, 0, 0, 12, 21, 128
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Shipping.js", "JavaScript", 0, 0, 122, 0, 0, 0, 14, 25, 161
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Success.css", "CSS", 0, 41, 0, 0, 0, 0, 11, 11, 63
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Success.js", "JavaScript", 0, 0, 15, 0, 0, 0, 14, 4, 33
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\CommentCard\CommentCard.css", "CSS", 0, 26, 0, 0, 0, 0, 11, 5, 42
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\CommentCard\CommentCard.jsx", "JavaScript JSX", 47, 0, 0, 0, 0, 0, 24, 7, 78
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ForgotPassword\ForgotPassword.css", "CSS", 0, 40, 0, 0, 0, 0, 11, 6, 57
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ForgotPassword\ForgotPassword.jsx", "JavaScript JSX", 47, 0, 0, 0, 0, 0, 14, 9, 70
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Header\Header.css", "CSS", 0, 67, 0, 0, 0, 0, 11, 13, 91
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Header\Header.jsx", "JavaScript JSX", 96, 0, 0, 0, 0, 0, 16, 27, 139
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Home\Home.css", "CSS", 0, 47, 0, 0, 0, 0, 11, 10, 68
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Home\Home.jsx", "JavaScript JSX", 81, 0, 0, 0, 0, 0, 16, 19, 116
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Loader\Loader.css", "CSS", 0, 23, 0, 0, 0, 0, 11, 4, 38
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Loader\Loader.jsx", "JavaScript JSX", 10, 0, 0, 0, 0, 0, 14, 4, 28
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Login\Login.css", "CSS", 0, 50, 0, 0, 0, 0, 11, 8, 69
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Login\Login.jsx", "JavaScript JSX", 60, 0, 0, 0, 0, 0, 16, 13, 89
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NewPost\NewPost.css", "CSS", 0, 73, 0, 0, 0, 0, 11, 10, 94
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NewPost\NewPost.jsx", "JavaScript JSX", 79, 0, 0, 0, 0, 0, 16, 12, 107
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NotFound\NotFound.css", "CSS", 0, 33, 0, 0, 0, 0, 11, 6, 50
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NotFound\NotFound.jsx", "JavaScript JSX", 21, 0, 0, 0, 0, 0, 16, 4, 41
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\MyOrder.css", "CSS", 0, 63, 0, 0, 0, 0, 12, 17, 92
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\MyOrder.js", "JavaScript", 0, 0, 95, 0, 0, 0, 18, 13, 126
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\OrderDetails.css", "CSS", 0, 88, 0, 0, 0, 0, 1, 20, 109
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\OrderDetails.js", "JavaScript", 0, 0, 113, 0, 0, 0, 25, 10, 148
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Post\Post.css", "CSS", 0, 113, 0, 0, 0, 0, 24, 22, 159
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Post\Post.jsx", "JavaScript JSX", 286, 0, 0, 0, 0, 0, 30, 52, 368
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Register\Register.css", "CSS", 0, 70, 0, 0, 0, 0, 11, 13, 94
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Register\Register.jsx", "JavaScript JSX", 82, 0, 0, 0, 0, 0, 15, 16, 113
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ResetPassword\ResetPassword.css", "CSS", 0, 51, 0, 0, 0, 0, 0, 6, 57
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ResetPassword\ResetPassword.jsx", "JavaScript JSX", 56, 0, 0, 0, 0, 0, 14, 10, 80
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Search\Search.css", "CSS", 0, 49, 0, 0, 0, 0, 11, 8, 68
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Search\Search.jsx", "JavaScript JSX", 46, 0, 0, 0, 0, 0, 13, 10, 69
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdatePassword\UpdatePassword.css", "CSS", 0, 40, 0, 0, 0, 0, 11, 7, 58
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdatePassword\UpdatePassword.jsx", "JavaScript JSX", 56, 0, 0, 0, 0, 0, 13, 12, 81
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdateProfile\UpdateProfile.css", "CSS", 0, 60, 0, 0, 0, 0, 11, 10, 81
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdateProfile\UpdateProfile.jsx", "JavaScript JSX", 88, 0, 0, 0, 0, 0, 14, 21, 123
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UserProfile\UserProfile.jsx", "JavaScript JSX", 185, 0, 0, 0, 0, 0, 14, 23, 222
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\User\User.jsx", "JavaScript JSX", 12, 0, 0, 0, 0, 0, 14, 3, 29
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\Cart.js", "JavaScript", 0, 0, 35, 0, 0, 0, 32, 9, 76
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\Order.js", "JavaScript", 0, 0, 147, 0, 0, 0, 181, 23, 351
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\Post.js", "JavaScript", 0, 0, 174, 0, 0, 0, 205, 18, 397
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\User.js", "JavaScript", 0, 0, 123, 0, 0, 0, 196, 10, 329
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\index.css", "CSS", 0, 12, 0, 0, 0, 0, 0, 2, 14
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\index.js", "JavaScript", 0, 0, 22, 0, 0, 0, 13, 4, 39
+"d:\MERN App\RamaporoadRunners-Mart\frontend\src\store.js", "JavaScript", 0, 0, 41, 0, 0, 0, 13, 11, 65
+"Total", "-", 1430, 1778, 1254, 19556, 38, 20, 860, 827, 25763

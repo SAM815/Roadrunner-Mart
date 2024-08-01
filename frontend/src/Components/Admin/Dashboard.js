@@ -10,7 +10,19 @@ import { getMyPosts, loadUser, } from "../../Actions/User";
 import { useAlert } from 'react-alert';
 import { getAllOrders } from '../../Actions/Order';
 
-
+/*
+Dashboard()
+NAME
+    Dashboard
+SYNOPSIS
+    Dashboard();
+DESCRIPTION
+    This React component displays the dashboard for the user. It shows the total amount earned,
+    the user's products, and orders in a summarized form. It includes links to view more details about products and orders.
+    The component uses charts to visualize data.
+RETURNS
+    Returns a React component that displays the user's dashboard with earnings, products, and orders.
+*/
 
 
 const Dashboard = () => {

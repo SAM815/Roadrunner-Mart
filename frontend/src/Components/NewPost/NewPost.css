@@ -1,3 +1,15 @@
+/*
+NewPost.css
+NAME
+    NewPost.css
+SYNOPSIS
+    Styles for the new post creation page.
+DESCRIPTION
+    Configures the layout and appearance of the new post form. The form is centered on the page with a white background and rounded corners. Input fields are styled for a consistent and clean look. Includes specific styling for file input buttons and responsive adjustments for smaller screens.
+RETURNS
+    CSS styles for a visually appealing and user-friendly new post form, with responsive design considerations for mobile devices.
+*/
+
 .newPost {
     min-height: 100vh;
     background-color: #862633;

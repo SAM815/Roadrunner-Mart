@@ -1,3 +1,16 @@
+/*
+Register.css
+NAME
+    Register.css
+SYNOPSIS
+    Styles for the user registration page.
+DESCRIPTION
+    Configures the layout, styling, and responsive design for the user registration form. Includes styling for form inputs, file upload buttons, and links. Ensures a centered and visually appealing form on both desktop and mobile devices, with adjustments for different screen sizes.
+RETURNS
+    CSS styles for a user-friendly and visually consistent registration page with responsive design for various screen sizes.
+*/
+
+
 .register {
     min-height: 100vh;
     background-color: #862633;

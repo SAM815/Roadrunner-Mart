@@ -5,6 +5,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { resetPassword } from "../../Actions/User";
 import "./ResetPassword.css";
+
+/*
+ResetPassword()
+NAME
+    ResetPassword
+SYNOPSIS
+    ResetPassword()
+DESCRIPTION
+    A React component for resetting a user's password. Allows users to set a new password using a token from a password reset email.
+
+    Uses local state for the password input and Material-UI components for styling.
+
+RETURNS
+    A form for resetting the password, with links to login and request another reset token. Provides feedback and handles form submission.
+*/
+
 const ResetPassword = () => {
   const [newPassword, setNewPassword] = useState("");
   const dispatch = useDispatch();

@@ -1,3 +1,15 @@
+/*
+Dashboard.css
+NAME
+    Dashboard.css
+SYNOPSIS
+    Styles for the dashboard layout and components.
+DESCRIPTION
+    Configures grid layout, container styling, summary sections, and chart dimensions. Includes responsive adjustments for smaller screens.
+RETURNS
+    CSS styles for a responsive and organized dashboard interface.
+*/
+
 .dashboard{
     width: 100vw;
     max-width: 100%;

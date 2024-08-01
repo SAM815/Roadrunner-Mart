@@ -14,6 +14,20 @@ import {Edit, Delete, } from "@mui/icons-material"
 import Sidebar from './Sidebar'
 import { useDispatch, useSelector } from 'react-redux'
 
+/*
+OrderList()
+NAME
+    OrderList
+SYNOPSIS
+    OrderList();
+DESCRIPTION
+    This React component displays a list of all orders in a table format using DataGrid.
+    It allows the user to view order details, edit, and delete orders.
+    The component handles fetching orders, managing errors, and displaying success messages.
+RETURNS
+    Returns a React component that displays the list of orders with options to edit and delete.
+*/
+
 const OrderList = () => {
     const dispatch = useDispatch();
     const alert = useAlert();

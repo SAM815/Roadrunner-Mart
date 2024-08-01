@@ -26,6 +26,35 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { addItemsToCart } from "../../Actions/Cart";
 import { useAlert } from "react-alert";
 
+/*
+Post()
+NAME
+    Post
+SYNOPSIS
+    Post({
+      postId,
+      caption,
+      description,
+      quantity,
+      price,
+      postImage,
+      likes,
+      comments,
+      ownerImage,
+      ownerName,
+      ownerId,
+      isDelete,
+      isAccount
+    })
+DESCRIPTION
+    A React component for displaying a single post with image, details, likes, and comments. It allows interactions such as liking, commenting, updating, deleting, and adding items to a cart.
+
+    Uses local state for managing interactions and Material-UI `Dialog` for modals.
+
+RETURNS
+    A React component with post details, interaction buttons, and modals. Provides feedback through alerts and manages user interactions based on permissions.
+*/
+
 const Post = ({
   postId,
   caption,

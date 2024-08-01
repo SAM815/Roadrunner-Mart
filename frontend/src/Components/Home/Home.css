@@ -1,4 +1,15 @@
-/* //Home.css */
+/*
+Home.css
+NAME
+    Home.css
+SYNOPSIS
+    Styles for the home page layout.
+DESCRIPTION
+    Configures the grid layout for the home page with a flexible sidebar and main content area. Includes styles for user elements and responsive adjustments for smaller screens, with hover effects and layout changes.
+RETURNS
+    CSS styles for a two-column layout with a sidebar and content area, user profile styling, and responsive design for mobile devices.
+*/
+
 
 .home {
     box-sizing: border-box;

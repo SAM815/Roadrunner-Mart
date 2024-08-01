@@ -1,0 +1,122 @@
+Date : 2024-07-31 20:08:22
+Directory : d:\MERN App\RamaporoadRunners-Mart\frontend\src
+Total : 72 files,  5720 codes, 2031 comments, 1134 blanks, all 8885 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JavaScript     |         25 |      2,512 |      1,457 |        463 |      4,432 |
+| CSS            |         30 |      1,778 |        303 |        381 |      2,462 |
+| JavaScript JSX |         17 |      1,430 |        271 |        290 |      1,991 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                         | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                            |         72 |      5,720 |      2,031 |      1,134 |      8,885 |
+| . (Files)                                                                                    |          5 |        211 |         39 |         66 |        316 |
+| Actions                                                                                      |          4 |        618 |        595 |         94 |      1,307 |
+| Components                                                                                   |         59 |      4,412 |        783 |        914 |      6,109 |
+| Components\Account                                                                           |          2 |        251 |         23 |         63 |        337 |
+| Components\Admin                                                                             |          9 |        701 |        109 |        169 |        979 |
+| Components\Cart                                                                              |         14 |      1,107 |        180 |        252 |      1,539 |
+| Components\CommentCard                                                                       |          2 |         73 |         35 |         12 |        120 |
+| Components\ForgotPassword                                                                    |          2 |         87 |         25 |         15 |        127 |
+| Components\Header                                                                            |          2 |        163 |         27 |         40 |        230 |
+| Components\Home                                                                              |          2 |        128 |         27 |         29 |        184 |
+| Components\Loader                                                                            |          2 |         33 |         25 |          8 |         66 |
+| Components\Login                                                                             |          2 |        110 |         27 |         21 |        158 |
+| Components\NewPost                                                                           |          2 |        152 |         27 |         22 |        201 |
+| Components\NotFound                                                                          |          2 |         54 |         27 |         10 |         91 |
+| Components\Order                                                                             |          4 |        359 |         56 |         60 |        475 |
+| Components\Post                                                                              |          2 |        399 |         54 |         74 |        527 |
+| Components\Register                                                                          |          2 |        152 |         26 |         29 |        207 |
+| Components\ResetPassword                                                                     |          2 |        107 |         14 |         16 |        137 |
+| Components\Search                                                                            |          2 |         95 |         24 |         18 |        137 |
+| Components\UpdatePassword                                                                    |          2 |         96 |         24 |         19 |        139 |
+| Components\UpdateProfile                                                                     |          2 |        148 |         25 |         31 |        204 |
+| Components\User                                                                              |          1 |         12 |         14 |          3 |         29 |
+| Components\UserProfile                                                                       |          1 |        185 |         14 |         23 |        222 |
+| Reducers                                                                                     |          4 |        479 |        614 |         60 |      1,153 |
++----------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                     | language       | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\Cart.js                              | JavaScript     |         30 |         56 |         11 |         97 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\Order.js                             | JavaScript     |        118 |        125 |         31 |        274 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\Post.js                              | JavaScript     |        142 |        118 |         11 |        271 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Actions\User.js                              | JavaScript     |        328 |        296 |         41 |        665 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\App.css                                      | CSS            |          4 |          0 |          1 |          5 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\App.js                                       | JavaScript     |        132 |         13 |         48 |        193 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Account\Account.css               | CSS            |         73 |         11 |         15 |         99 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Account\Account.jsx               | JavaScript JSX |        178 |         12 |         48 |        238 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Dashboard.css               | CSS            |         85 |         11 |         20 |        116 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Dashboard.js                | JavaScript     |         91 |         13 |         29 |        133 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\OrderList.js                | JavaScript     |        114 |         13 |         17 |        144 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProcessOrder.css            | CSS            |         38 |         11 |          8 |         57 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProcessOrder.js             | JavaScript     |        178 |         13 |         34 |        225 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProductList.css             | CSS            |         46 |         11 |         12 |         69 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\ProductList.js              | JavaScript     |         73 |         13 |         21 |        107 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Sidebar.css                 | CSS            |         33 |         11 |         13 |         57 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Admin\Sidebar.js                  | JavaScript     |         43 |         13 |         15 |         71 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Cart.css                     | CSS            |        157 |         12 |         37 |        206 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Cart.js                      | JavaScript     |         87 |         12 |         20 |        119 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CartItemCart.css             | CSS            |         50 |         11 |         16 |         77 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CartItemCart.js              | JavaScript     |         16 |         14 |          3 |         33 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CheckoutSteps.css            | CSS            |         11 |         11 |          5 |         27 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\CheckoutSteps.js             | JavaScript     |         44 |         13 |          9 |         66 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\ConfirmOrder.css             | CSS            |        165 |         11 |         40 |        216 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\ConfirmOrder.js              | JavaScript     |        106 |         16 |         14 |        136 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Payment.css                  | CSS            |         75 |         11 |         15 |        101 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Payment.js                   | JavaScript     |        123 |         18 |         32 |        173 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Shipping.css                 | CSS            |         95 |         12 |         21 |        128 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Shipping.js                  | JavaScript     |        122 |         14 |         25 |        161 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Success.css                  | CSS            |         41 |         11 |         11 |         63 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Cart\Success.js                   | JavaScript     |         15 |         14 |          4 |         33 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\CommentCard\CommentCard.css       | CSS            |         26 |         11 |          5 |         42 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\CommentCard\CommentCard.jsx       | JavaScript JSX |         47 |         24 |          7 |         78 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ForgotPassword\ForgotPassword.css | CSS            |         40 |         11 |          6 |         57 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ForgotPassword\ForgotPassword.jsx | JavaScript JSX |         47 |         14 |          9 |         70 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Header\Header.css                 | CSS            |         67 |         11 |         13 |         91 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Header\Header.jsx                 | JavaScript JSX |         96 |         16 |         27 |        139 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Home\Home.css                     | CSS            |         47 |         11 |         10 |         68 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Home\Home.jsx                     | JavaScript JSX |         81 |         16 |         19 |        116 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Loader\Loader.css                 | CSS            |         23 |         11 |          4 |         38 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Loader\Loader.jsx                 | JavaScript JSX |         10 |         14 |          4 |         28 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Login\Login.css                   | CSS            |         50 |         11 |          8 |         69 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Login\Login.jsx                   | JavaScript JSX |         60 |         16 |         13 |         89 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NewPost\NewPost.css               | CSS            |         73 |         11 |         10 |         94 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NewPost\NewPost.jsx               | JavaScript JSX |         79 |         16 |         12 |        107 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NotFound\NotFound.css             | CSS            |         33 |         11 |          6 |         50 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\NotFound\NotFound.jsx             | JavaScript JSX |         21 |         16 |          4 |         41 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\MyOrder.css                 | CSS            |         63 |         12 |         17 |         92 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\MyOrder.js                  | JavaScript     |         95 |         18 |         13 |        126 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\OrderDetails.css            | CSS            |         88 |          1 |         20 |        109 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Order\OrderDetails.js             | JavaScript     |        113 |         25 |         10 |        148 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Post\Post.css                     | CSS            |        113 |         24 |         22 |        159 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Post\Post.jsx                     | JavaScript JSX |        286 |         30 |         52 |        368 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Register\Register.css             | CSS            |         70 |         11 |         13 |         94 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Register\Register.jsx             | JavaScript JSX |         82 |         15 |         16 |        113 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ResetPassword\ResetPassword.css   | CSS            |         51 |          0 |          6 |         57 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\ResetPassword\ResetPassword.jsx   | JavaScript JSX |         56 |         14 |         10 |         80 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Search\Search.css                 | CSS            |         49 |         11 |          8 |         68 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\Search\Search.jsx                 | JavaScript JSX |         46 |         13 |         10 |         69 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdatePassword\UpdatePassword.css | CSS            |         40 |         11 |          7 |         58 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdatePassword\UpdatePassword.jsx | JavaScript JSX |         56 |         13 |         12 |         81 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdateProfile\UpdateProfile.css   | CSS            |         60 |         11 |         10 |         81 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UpdateProfile\UpdateProfile.jsx   | JavaScript JSX |         88 |         14 |         21 |        123 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\UserProfile\UserProfile.jsx       | JavaScript JSX |        185 |         14 |         23 |        222 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Components\User\User.jsx                     | JavaScript JSX |         12 |         14 |          3 |         29 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\Cart.js                             | JavaScript     |         35 |         32 |          9 |         76 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\Order.js                            | JavaScript     |        147 |        181 |         23 |        351 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\Post.js                             | JavaScript     |        174 |        205 |         18 |        397 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\Reducers\User.js                             | JavaScript     |        123 |        196 |         10 |        329 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\index.css                                    | CSS            |         12 |          0 |          2 |         14 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\index.js                                     | JavaScript     |         22 |         13 |          4 |         39 |
+| d:\MERN App\RamaporoadRunners-Mart\frontend\src\store.js                                     | JavaScript     |         41 |         13 |         11 |         65 |
+| Total                                                                                        |                |      5,720 |      2,031 |      1,134 |      8,885 |
++----------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

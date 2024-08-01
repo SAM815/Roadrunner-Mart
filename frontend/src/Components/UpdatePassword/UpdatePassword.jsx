@@ -5,6 +5,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { updatePassword } from "../../Actions/User";
 import { useAlert } from "react-alert";
 
+/*
+UpdatePassword()
+NAME
+    UpdatePassword
+SYNOPSIS
+    UpdatePassword()
+DESCRIPTION
+    A React component for updating the user's password. Provides a form to input the old and new passwords and dispatches the update action.
+    Uses local state to manage password inputs and Redux for state management and dispatching actions. Material-UI components are used for styling.
+
+RETURNS
+    A form with inputs for the old and new passwords, and a button to submit the update request.
+*/
+
 const UpdatePassword = () => {
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");

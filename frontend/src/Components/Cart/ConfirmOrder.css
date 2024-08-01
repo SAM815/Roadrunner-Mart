@@ -1,3 +1,16 @@
+/*
+ConfirmOrder.css
+NAME
+    ConfirmOrder.css
+SYNOPSIS
+    Styles for the order confirmation page layout and elements.
+DESCRIPTION
+    Configures grid layout, container padding, typography, and responsive adjustments for the order confirmation page.
+RETURNS
+    CSS styles for a well-structured and responsive order confirmation page interface.
+*/
+
+
 .confirmOrderPage{
     height: 100vh;
     background-color: white;

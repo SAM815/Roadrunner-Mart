@@ -1,3 +1,15 @@
+/*
+Login.css
+NAME
+    Login.css
+SYNOPSIS
+    Styles for the login page.
+DESCRIPTION
+    Configures the layout and appearance of the login page. Includes styling for the login form, which is centered on the page with a white background and rounded corners. The form elements are styled for readability and user interaction. Includes responsive design adjustments for smaller screens.
+RETURNS
+    CSS styles for a centered and visually appealing login page with a responsive design for form inputs and links.
+*/
+
 .login {
     height: 100vh;
     background-color: #862633;

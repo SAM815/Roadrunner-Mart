@@ -12,6 +12,22 @@ import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
 
+/*
+UserProfile()
+NAME
+    UserProfile
+SYNOPSIS
+    UserProfile()
+DESCRIPTION
+    A React component that displays a user's profile, including their posts, followers, and following list. It allows users to follow or unfollow other users and view detailed lists of followers and following.
+
+    Uses Material-UI components for UI elements and styling. 
+
+RETURNS
+    A profile page with user details, posts, and interactive follow/unfollow button. Includes modals for viewing followers and following lists.
+*/
+
+
 const UserProfile = () => {
   const dispatch = useDispatch();
   const alert = useAlert();

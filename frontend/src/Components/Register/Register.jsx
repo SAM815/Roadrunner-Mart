@@ -6,6 +6,22 @@ import "./Register.css";
 import { registerUser } from "../../Actions/User";
 import { useAlert } from "react-alert";
 
+/*
+Register()
+NAME
+    Register
+SYNOPSIS
+    Register()
+DESCRIPTION
+    A React component for user registration. Allows users to sign up with a name, email, password, and avatar.
+
+    
+    Uses local state for form inputs and Material-UI components for UI elements.
+
+RETURNS
+    A registration form with fields for user details, an avatar upload, and a sign-up button. Provides feedback and handles form submission.
+*/
+
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

@@ -1,3 +1,15 @@
+/*
+MyOrder.css
+NAME
+    MyOrder.css
+SYNOPSIS
+    Styles for the "My Orders" page.
+DESCRIPTION
+    Defines the layout and styling for the "My Orders" page, including a fixed sidebar with a heading and a table for displaying orders. The heading has a dark background with white text, and the table is styled for readability. The DataGrid component has custom header styling and color transitions for links. Responsive design adjustments ensure the page is appropriately styled for mobile devices.
+RETURNS
+    CSS styles for a visually appealing and functional orders page with a fixed layout, responsive design, and custom DataGrid styling.
+*/
+
 .myOrdersPage{
     width: 100vw;
     padding: 0 7vmax;

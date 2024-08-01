@@ -5,6 +5,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { createNewPost } from "../../Actions/Post";
 import { loadUser } from "../../Actions/User";
 import "./NewPost.css";
+/*
+NewPost()
+NAME
+    NewPost
+SYNOPSIS
+    NewPost()
+DESCRIPTION
+    This React component provides a form for users to create and submit a new post. It includes fields for uploading an image, entering a caption, description, quantity, and price. The component uses Material UI for styling and layout, and integrates with Redux for state management and dispatching actions.
+
+    The `handleImageChange` function handles image file input, reads the selected file using `FileReader`, and updates the state with the image data URL. The `submitHandler` function is triggered upon form submission, dispatching the `createNewPost` action with the form data and subsequently loading the user data by dispatching `loadUser`.
+
+    The `useEffect` hook manages side effects related to error and message notifications. It listens for changes in the `error` and `message` state from Redux, and uses the `react-alert` library to display appropriate alerts. It also clears these states after displaying the alerts.
+
+RETURNS
+    Returns a React component that renders a form for creating a new post, allowing users to upload an image, provide a caption, description, quantity, and price. The form submission triggers actions to create the post and update the user data.
+*/
 const NewPost = () => {
   const [image, setImage] = useState(null);
   const [caption, setCaption] = useState("");

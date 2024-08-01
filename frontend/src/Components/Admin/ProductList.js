@@ -12,6 +12,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Edit, Delete, } from "@mui/icons-material"
 import Sidebar from './Sidebar'
 
+/*
+ProductList()
+NAME
+    ProductList
+SYNOPSIS
+    ProductList();
+DESCRIPTION
+    This React component displays a list of products in a data grid format.
+    It fetches the user's posts and displays product details including ID, name, stock quantity, and price.
+    It provides an interface for the user to view all their products with options for editing or deleting.
+RETURNS
+    Returns a React component that displays a list of products in a data grid.
+*/
+
 const ProductList = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
